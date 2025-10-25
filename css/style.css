@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'Asimovian';
-  src: url('Fonts/Asimovian-Regular.ttf') format('truetype');
+  font-family: 'Rowdies';
+  src: url('Fonts/Rowdies-Light.ttf') format('truetype');
 }
 
 h1 {
   color: #9fd3c7;
   text-align: center;
-  font-family: 'Asimovian', sans-serif;
+  font-family: 'Rowdies', sans-serif;
 }
