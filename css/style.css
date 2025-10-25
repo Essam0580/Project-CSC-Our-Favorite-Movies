@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Asimovian';
-  src: url('../Fonts/Asimovian-Regular.ttf') format('truetype');
+  src: url('Fonts/Asimovian-Regular.ttf') format('truetype');
 }
 
 h1 {
