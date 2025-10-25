@@ -1,11 +1,10 @@
-font-face{
-  font-family: ´Rowdies´ ;
-  src url(Fonts/Rowdies-Light.ttf);
+@font-face {
+  font-family: 'Rowdies';
+  src: url('Fonts/Rowdies-Light.ttf') format('truetype');
 }
-
 
 h1 {
   color: #9fd3c7;
   text-align: center;
-  font-family: ´Rowdies´ 
+  font-family: 'Rowdies', sans-serif;
 }
