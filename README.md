@@ -1,3 +1,3 @@
-credits : Hamza Omar, Essam Ahmed, Amr Ayman, Mohamed Amr,and Ahmed Osama.
+credits : Hamza Omar,  Essam Ahmed,  Amr Ayman,  Mohamed Amr, and Ahmed Osama.
 
 website idea: a website about our favorite movies and what made them good.
