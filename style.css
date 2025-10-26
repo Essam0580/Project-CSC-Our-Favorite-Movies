@@ -79,7 +79,10 @@ color: #ffffff;
 
 
 .Movie_info,
-.Movie_info1{
+.Movie_info1,
+.Movie_info2,
+.Movie_info3,
+.Movie_info4{
   flex: 1;
   text-align: left;
 }
