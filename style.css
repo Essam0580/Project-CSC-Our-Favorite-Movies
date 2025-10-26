@@ -31,5 +31,9 @@ color: #ffffff;
 #Movie1 img {
   width: 200px;
   height: 300px;
-  object-fit: cover;
+}
+
+.Oppenheimer img {
+  width: 200px;
+  height: 300px;
 }
