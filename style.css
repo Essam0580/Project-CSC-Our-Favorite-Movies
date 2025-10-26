@@ -41,18 +41,42 @@ color: #ffffff;
   width: 200px;
   height: 300px;
 }
+.Nightcrawler {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .Terminator-img {
   width: 200px;
   height: 300px;
 }
+.The Terminator {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .Godfather-img {
   width: 200px;
   height: 300px;
 }
+.The Godfather {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .Whip-img {
   width: 200px;
   height: 300px;
 }
+.Whipsplash {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 
 .Movie_info {
   flex: 1;
