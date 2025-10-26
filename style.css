@@ -27,3 +27,7 @@ color: #ffffff;
   text-align: center;
   font-family: Playfair;
 }
+#Movie1 img {
+width: 200px;
+height: 300px;
+}
