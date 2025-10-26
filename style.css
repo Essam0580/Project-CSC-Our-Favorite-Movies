@@ -1,5 +1,11 @@
+@font-face {
+  font-family: Asimovian;
+  src: url(Fonts/Asimovian-Regular.woff2);
+}
+
 h1 {
-  color: red ;
+  color: #9fd3c7;
   text-align: center;
+  font-family: Asimovian;
 }
   
