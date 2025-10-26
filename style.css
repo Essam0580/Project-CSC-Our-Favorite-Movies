@@ -28,6 +28,16 @@ color: #ffffff;
   font-family: Playfair;
 }
 
+.oppenheimer-img {
+  width: 200px;
+  height: 300px;
+}
+.Oppenheimer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .Night-img {
   width: 200px;
   height: 300px;
@@ -45,8 +55,3 @@ color: #ffffff;
   height: 300px;
 }
 
-
-.oppenheimer-img {
-  width: 200px;
-  height: 300px;
-}
