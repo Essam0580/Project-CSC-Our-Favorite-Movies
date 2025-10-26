@@ -78,7 +78,8 @@ color: #ffffff;
 }
 
 
-.Movie_info {
+.Movie_info,
+.Movie_info1{
   flex: 1;
   text-align: left;
 }
