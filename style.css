@@ -6,6 +6,10 @@
   font-family: Stardom;
   src: url("Fonts/Stardom-Regular.ttf");
 }
+@font-face {
+  font-family: Playfair;
+  src: url("Fonts/PlayfairDisplay-Regular[1].ttf");
+}
 
 h1 {
    color: #ffffff; 
@@ -16,4 +20,10 @@ h1 {
 body {
   background-color: #000000;
   color: #ffffff;  
+}
+
+p {
+color: #ffffff; 
+  text-align: center;
+  font-family: Playfair;
 }
