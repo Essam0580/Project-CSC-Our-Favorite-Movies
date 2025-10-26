@@ -27,8 +27,18 @@ color: #ffffff;
   text-align: center;
   font-family: Playfair;
 }
+#Movie1 img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .Oppenheimer img {
   width: 200px;
   height: 300px;
 }
 
+.oppenheimer-img {
+  width: 200px;
+  height: 300px;
+}
