@@ -1,1 +1,29 @@
-
+<html>
+<head>
+    <title>ABOUT PAGE</title>
+</head>
+<body>
+    <h1>what is this website about ?</h1>
+    <hr style="border: 0; border-top: 4px double #0e250f;">
+    <P>This website was created by us to share our favourite movies with you...</P>
+    <h2>our team members:</h2>
+    <ul>
+        <li>HAMZA OMAR</li>
+        <li>AHMED OSAMA</li>
+        <li>ESSAM AHMED</li>
+        <li>MOHAMED AMR</li>
+        <li>AMR AYMAN</li>
+    </ul>
+    <hr>
+    <p>we hope you enjoyed exploring our website and thank you!</p>
+    <h3>our movie index is:
+        <ol style="border: 2px solid black; padding: 20px; width: 100%; border-radius: 8px;">
+            <li>The terminator</li>
+            <li>Night crawler</li>
+            <li>oppenheimer</li>
+            <li>whiplash</li>
+            <li>The god father</li>
+        </ol>
+    </h3>
+</body>
+</html>
