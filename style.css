@@ -27,28 +27,20 @@ color: #ffffff;
   text-align: center;
   font-family: Playfair;
 }
-#Movie1 img {
-  width: 200px;
-  height: 300px;
-}
 
-.Oppenheimer img {
+.Night-img {
   width: 200px;
   height: 300px;
 }
-.Night img {
+.Terminator-img {
   width: 200px;
   height: 300px;
 }
-.Terminator img {
+.Godfather-img {
   width: 200px;
   height: 300px;
 }
-.Godfather img {
-  width: 200px;
-  height: 300px;
-}
-.Whip img {
+.Whip-img {
   width: 200px;
   height: 300px;
 }
