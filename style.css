@@ -156,6 +156,22 @@ nav a:hover {
 
 
 
+/* Make movie sections appear below the nav but above the footer */
+section {
+  position: fixed;
+  top: 60px; /* adjust if your top nav is taller */
+  height: calc(100vh - 60px);
+}
+
+/* Footer/bottom nav must sit ABOVE the fixed sections visually when reached */
+.bottom-nav {
+  position: relative;
+  z-index: 10;
+}
+
+
+
+
 html, body {
   height: 100%;
   margin: 0;
