@@ -156,6 +156,25 @@ nav a:hover {
 
 
 
+
+/* Create scroll space for fixed sections */
+body::after {
+  content: "";
+  display: block;
+  height: 600vh; /* makes room to scroll */
+}
+
+/* Keep the bottom nav at the *end* of scroll*/
+.bottom-nav-position {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+
 html, body {
   height: 100%;
   margin: 0;

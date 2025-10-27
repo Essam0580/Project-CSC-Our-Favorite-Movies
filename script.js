@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showMovie(index) {
     movies.forEach((m, i) => {
-      if (i === index) {
-        m.classList.add('visible');
-      } else {
-        m.classList.remove('visible');
-      }
+  if (i === index) {
+    m.classList.add('visible');
+    m.style.position = 'fixed';
+  } else {
+    m.classList.remove('visible');
+    m.style.position = (i === movies.length - 1) ? 'relative' : 'fixed';
+  }
     });
   }
 
@@ -30,5 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Make sure body is tall enough to allow scrolling through all movies
-  document.body.style.height = `${movies.length * window.innerHeight}px`;
+document.body.style.height = `${movies.length * window.innerHeight}px`;
 });
