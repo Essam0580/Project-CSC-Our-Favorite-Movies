@@ -42,6 +42,7 @@ html, body{
 }
 .APwhiplash:hover img{
     filter: grayscale(0%);
+    
 }
 
 .APnight_crawler {
@@ -119,7 +120,15 @@ html, body{
 .APthe_godfather:hover img{
     filter: grayscale(0%);
 }
-
+.TXTabout{
+    position: absolute;
+    z-index: 999;
+    font-family: PALSCRI;
+    font-size:7.5em;
+    color: #ffffff;
+    margin-top: 4%;
+    margin-left: 2.5%;
+}
 
 /* This is the NAVigation*/
 nav {
@@ -144,8 +153,10 @@ nav a {
   font-family: Stardom;
   transition: color 0.5s ease;
   text-decoration: none;
+  height: 15px;
 }
 
 nav a:hover {
   color: #ffcc00;
 }
+
