@@ -32,14 +32,18 @@ html, body{
     border-radius: 2px solid #333;
     margin: 0px auto;
 }
-
 .APwhiplash img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     filter: grayscale(100%);
+    transition: 0.35s ease;
 }
+.APwhiplash:hover img{
+    filter: grayscale(0%);
+}
+
 .APnight_crawler {
     width: 462;
     height: 1000;
@@ -47,14 +51,18 @@ html, body{
     border-radius: 2px solid #333;
     margin: 0px auto;
 }
-
 .APnight_crawler img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: -130px;
     filter: grayscale(100%);
+    transition: 0.35s ease;
 }
+.APnight_crawler:hover img{
+    filter: grayscale(0%);
+}
+
 .APoppenheimer {
     width: 462;
     height: 1000;
@@ -62,14 +70,18 @@ html, body{
     border-radius: 2px solid #333;
     margin: 0px auto;
 }
-
 .APoppenheimer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     filter: grayscale(100%);
+    transition: 0.35s ease;
 }
+.APoppenheimer:hover img{
+    filter: grayscale(0%);
+}
+
 .APthe_terminator {
     width: 462;
     height: 1000;
@@ -77,14 +89,18 @@ html, body{
     border-radius: 2px solid #333;
     margin: 0px auto;
 }
-
 .APthe_terminator img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     filter: grayscale(100%);
+    transition: 0.35s ease;
 }
+.APthe_terminator:hover img{
+    filter: grayscale(0%);
+}
+
 .APthe_godfather {
     width: 462;
     height: 1000;
@@ -92,14 +108,18 @@ html, body{
     border-radius: 2px solid #333;
     margin: 0px auto;
 }
-
 .APthe_godfather img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     filter: grayscale(100%);
+    transition: 0.35s ease;
 }
+.APthe_godfather:hover img{
+    filter: grayscale(0%);
+}
+
 
 /* This is the NAVigation*/
 nav {
