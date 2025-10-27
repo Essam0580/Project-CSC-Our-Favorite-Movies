@@ -99,8 +99,6 @@ nav {
 }
 
 nav a {
-  position: fixed;
-
   color: #ffffff;
   font-family: Stardom;
   transition: color 0.5s ease;
@@ -109,10 +107,5 @@ nav a {
 }
 nav a:hover {
   color: #ffcc00;
-}
-body {
-  margin: 0;
-  background-color: #000000;
-  color: #ffffff;
 }
 
