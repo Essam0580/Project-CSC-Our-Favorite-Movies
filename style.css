@@ -160,7 +160,7 @@ nav a:hover {
 body::after {
   content: "";
   display: block;
-  height: 500vh; /* enough height for scrolling through all sections */
+  height: 2500vh; /* enough height for scrolling through all sections */
 }
 
 /* Keep bottom-nav visually at the bottom of the page */
