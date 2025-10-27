@@ -141,13 +141,27 @@ nav a:hover {
 
 
 
+/* Make each movie section take up the viewport so threshold 0.5 works nicely */
 section {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 80px 40px; /* keep some vertical space; adjust to taste */
+  display: flex;
+  align-items: center;
+  gap: 20px;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
+/* class toggled by JS when section is "active" / visible */
 section.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* small responsive tweak so images wrap on narrow screens */
+@media (max-width: 800px) {
+  section { flex-direction: column; text-align: center; padding: 40px 20px; }
+}
+
