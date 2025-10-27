@@ -1,61 +1,34 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Select only the movie sections (you gave them ids Movie1..Movie5)
   const movies = document.querySelectorAll('section[id^="Movie"]');
+  let currentIndex = 0;
 
-  if (!movies.length) {
-    console.warn('No movie sections found. Make sure your <section> tags have ids like id="Movie1"');
+  function showMovie(index) {
+    movies.forEach((m, i) => {
+      if (i === index) {
+        m.classList.add('visible');
+      } else {
+        m.classList.remove('visible');
+      }
+    });
   }
 
-  // Make sure the script loaded (helpful for debugging)
-  console.log(`Found ${movies.length} movie section(s).`);
+  // Show the first movie
+  showMovie(0);
 
-  const options = {
-    threshold: 0.5,            // 50% of section must be in view
-    root: null,
-    rootMargin: '0px'
-  };
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY;
+    const step = window.innerHeight * 0.8; // how much scroll to switch
+    const newIndex = Math.min(
+      Math.floor(scrollPos / step),
+      movies.length - 1
+    );
 
-  // IntersectionObserver path
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        entry.target.classList.toggle('visible', entry.isIntersecting);
-      });
-    }, options);
-
-    movies.forEach(m => observer.observe(m));
-    console.log('Using IntersectionObserver for scroll fades.');
-  } else {
-    // Fallback for older browsers: onscroll handler (throttled)
-    console.log('IntersectionObserver not supported — using scroll fallback.');
-
-    function isCenteredInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      const viewCenter = window.innerHeight / 2;
-      return rect.top < viewCenter && rect.bottom > viewCenter;
+    if (newIndex !== currentIndex) {
+      currentIndex = newIndex;
+      showMovie(currentIndex);
     }
+  });
 
-    function updateVisibility() {
-      movies.forEach(m => {
-        m.classList.toggle('visible', isCenteredInViewport(m));
-      });
-    }
-
-    // simple throttle
-    function throttle(fn, wait = 100) {
-      let last = 0;
-      return (...args) => {
-        const now = Date.now();
-        if (now - last > wait) {
-          last = now;
-          fn(...args);
-        }
-      };
-    }
-
-    window.addEventListener('scroll', throttle(updateVisibility, 100));
-    window.addEventListener('resize', throttle(updateVisibility, 100));
-    updateVisibility();
-  }
+  // Make sure body is tall enough to allow scrolling through all movies
+  document.body.style.height = `${movies.length * window.innerHeight}px`;
 });
