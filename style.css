@@ -95,7 +95,7 @@ nav {
   background-color: #222222;
   padding: 15px;
   border-bottom: 2px solid #444;
-  border-top:8px solid #FFFFFF;
+  border-top:8px solid #222222;
 }
 
 nav a {
@@ -103,7 +103,7 @@ nav a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10;
 
   color: #ffffff;
   font-family: Stardom;
