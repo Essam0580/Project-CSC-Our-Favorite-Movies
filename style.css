@@ -89,6 +89,7 @@ color: #ffffff;
 
 nav {
   display: flex;
+  font-family: Stardom;
   justify-content: center;
   gap:32px;
   background-color: #222222;
@@ -104,5 +105,8 @@ nav a {
 }
 nav a:hover {
   color: #ffcc00;
+}
+nav {
+  background-color: red !important;
 }
 
