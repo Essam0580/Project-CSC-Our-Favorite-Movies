@@ -156,6 +156,21 @@ nav a:hover {
 
 
 
+/* Create invisible scroll space so the page has height */
+body::after {
+  content: "";
+  display: block;
+  height: 500vh; /* enough height for scrolling through all sections */
+}
+
+/* Keep bottom-nav visually at the bottom of the page */
+.bottom-nav {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  margin-top: 100vh; /* pushes it after the scroll area */
+}
 
 
 
