@@ -1,0 +1,89 @@
+@font-face {
+    font-family: PALSCRI;
+    src: url("Fonts/PALSCRI.TTF");
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+.APtop_images{
+    display: flex;
+    width: 100vw;
+    overflow: hidden;
+    height: 2000px;
+}
+.APwhiplash {
+    width: 462;
+    height: 1000;
+    overflow: hidden;
+    border-radius: 2px solid #333;
+    margin: 50px auto;
+}
+
+.APwhiplash img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+.APnight_crawler {
+    width: 462;
+    height: 1000;
+    overflow: hidden;
+    border-radius: 2px solid #333;
+    margin: 50px auto;
+}
+
+.APnight_crawler img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: -130px;
+    filter: grayscale(100%);
+}
+.APoppenheimer {
+    width: 462;
+    height: 1000;
+    overflow: hidden;
+    border-radius: 2px solid #333;
+    margin: 50px auto;
+}
+
+.APoppenheimer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+.APthe_terminator {
+    width: 462;
+    height: 1000;
+    overflow: hidden;
+    border-radius: 2px solid #333;
+    margin: 50px auto;
+}
+
+.APthe_terminator img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+.APthe_godfather {
+    width: 462;
+    height: 1000;
+    overflow: hidden;
+    border-radius: 2px solid #333;
+    margin: 50px auto;
+}
+
+.APthe_godfather img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
