@@ -11,13 +11,14 @@ html, body{
     width: 100vw;
     overflow: hidden;
     height: 2000px;
+    background-color: black;
 }
 .APwhiplash {
     width: 462;
     height: 1000;
     overflow: hidden;
     border-radius: 2px solid #333;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 .APwhiplash img {
@@ -32,7 +33,7 @@ html, body{
     height: 1000;
     overflow: hidden;
     border-radius: 2px solid #333;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 .APnight_crawler img {
@@ -47,7 +48,7 @@ html, body{
     height: 1000;
     overflow: hidden;
     border-radius: 2px solid #333;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 .APoppenheimer img {
@@ -62,7 +63,7 @@ html, body{
     height: 1000;
     overflow: hidden;
     border-radius: 2px solid #333;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 .APthe_terminator img {
@@ -77,7 +78,7 @@ html, body{
     height: 1000;
     overflow: hidden;
     border-radius: 2px solid #333;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 .APthe_godfather img {
