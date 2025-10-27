@@ -25,6 +25,8 @@ html, body{
     height: 2000px;
     background-color: black;
 }
+
+/*Whiplash Interactions*/
 .APwhiplash {
     width: 462;
     height: 1000;
@@ -42,9 +44,15 @@ html, body{
 }
 .APwhiplash:hover img{
     filter: grayscale(0%);
-    
+}
+.APwhiplash:hover ~ .TXTabout{
+    opacity: 0;
+}
+.APwhiplash:hover > .APTXTwhiplash img{
+    opacity: 1;
 }
 
+/*Night Crawler Interactions*/
 .APnight_crawler {
     width: 462;
     height: 1000;
@@ -63,7 +71,11 @@ html, body{
 .APnight_crawler:hover img{
     filter: grayscale(0%);
 }
+.APnight_crawler:hover ~ .APTXTnight_crawler img{
+    opacity: 1;
+}
 
+/*Oppenheimer Interactions*/
 .APoppenheimer {
     width: 462;
     height: 1000;
@@ -83,6 +95,7 @@ html, body{
     filter: grayscale(0%);
 }
 
+/*The Terminator Interactions*/
 .APthe_terminator {
     width: 462;
     height: 1000;
@@ -101,7 +114,11 @@ html, body{
 .APthe_terminator:hover img{
     filter: grayscale(0%);
 }
+.APthe_terminator:hover > .APTXTthe_terminator img{
+    opacity: 1;
+}
 
+/*The Godfather Interactions*/
 .APthe_godfather {
     width: 462;
     height: 1000;
@@ -120,14 +137,52 @@ html, body{
 .APthe_godfather:hover img{
     filter: grayscale(0%);
 }
+
+
+/*Text Interactions*/
+.APTXTwhiplash img{
+    position: absolute;
+    opacity: 0;
+    z-index: 800;
+    top: 20%;
+    left: 1.5%;
+    aspect-ratio: 755px/170px;
+    width: 300px;
+    height: auto;
+    transition: 0.35s ease;
+}
+.APTXTthe_terminator img{
+    position: absolute;
+    opacity: 0;
+    z-index: 800;
+    top: 76%;
+    left: 22.9%;
+    aspect-ratio: 1406px/545px;
+    width: 300px;
+    height: auto;
+    transition: 0.35s ease;
+}
+.APTXTnight_crawler img{
+    position: absolute;
+    opacity: 0;
+    z-index: 800;
+    top: 76%;
+    left: 40.2%;
+    aspect-ratio: 1406px/545px;
+    width: 400px;
+    height: auto;
+    transition: 0.35s ease;
+}
 .TXTabout{
     position: absolute;
+    opacity: 1;
     z-index: 999;
     font-family: PALSCRI;
     font-size:7.5em;
     color: #ffffff;
     margin-top: 4%;
     margin-left: 2.5%;
+    transition: 0.35s ease;
 }
 
 /* This is the NAVigation*/
