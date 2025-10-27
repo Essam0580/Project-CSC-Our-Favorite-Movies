@@ -164,7 +164,7 @@ body::after {
   height: 600vh; /* makes room to scroll */
 }
 
-/* Keep the bottom nav at the *end* of scroll */
+/* Keep the bottom nav at the *end* of scroll*/
 .bottom-nav-position {
   position: absolute;
   bottom: 0;
