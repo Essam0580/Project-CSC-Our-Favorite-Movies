@@ -30,5 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Make sure body is tall enough to allow scrolling through all movies
-  document.body.style.height = `${movies.length * window.innerHeight}px`;
+document.body.style.height = `${movies.length * window.innerHeight + 200}px`;
 });
