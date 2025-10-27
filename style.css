@@ -101,12 +101,9 @@ nav a {
   color: #ffffff;
   font-family: Stardom;
   transition: color 0.5s ease;
+  text-decoration: none;
 
 }
 nav a:hover {
   color: #ffcc00;
 }
-nav {
-  background-color: red !important;
-}
-
