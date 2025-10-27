@@ -20,6 +20,8 @@ h1 {
 body {
   background-color: #000000;
   color: #ffffff;  
+  margin: 0;
+  padding-top: 200px;
 }
 
 p {
@@ -113,10 +115,4 @@ nav a {
 }
 nav a:hover {
   color: #ffcc00;
-}
-body {
-  margin: 0;
-  padding-top: 200px; /* adjust if needed */
-  background-color: #000000;
-  color: #ffffff;
 }
