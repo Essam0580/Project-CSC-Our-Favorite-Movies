@@ -20,191 +20,55 @@ html, body{
     background-color: #000000;
   color: #FFFFFF;
 }
-.APtop_images{
+.APtop_images {
     display: flex;
-    width: 100vw;
-    overflow: hidden;
-    height: 2000px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 1000px;
     background-color: black;
-}
-
-/*Whiplash Interactions*/
-.APwhiplash {
-    width: 462;
-    height: 1000;
     overflow: hidden;
-    border-radius: 2px solid #333;
-    margin: 0px auto;
 }
-.APwhiplash img {
+  
+
+.movie {
+    position: relative;        /* makes overlay position relative to this box */
+    flex: 1 1 20%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+}
+  
+
+.poster {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     filter: grayscale(100%);
-    transition: 0.35s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
-.APwhiplash:hover img{
-    filter: grayscale(0%);
-}
-.APwhiplash:hover ~ .TXTabout{
+  
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;        /* scales relative to box size */
+    height: auto;
     opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none; /* ensures hover passes through */
 }
-.APwhiplash:hover > .APTXTwhiplash img{
+  
+
+.movie:hover .poster {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+.movie:hover .overlay {
     opacity: 1;
 }
-
-/*Night Crawler Interactions*/
-.APnight_crawler {
-    width: 462;
-    height: 1000;
-    overflow: hidden;
-    border-radius: 2px solid #333;
-    margin: 0px auto;
-}
-.APnight_crawler img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: -130px;
-    filter: grayscale(100%);
-    transition: 0.35s ease;
-}
-.APnight_crawler:hover img{
-    filter: grayscale(0%);
-}
-.APnight_crawler:hover ~ .APTXTnight_crawler img{
-    opacity: 1;
-}
-
-/*Oppenheimer Interactions*/
-.APoppenheimer {
-    width: 462;
-    height: 1000;
-    overflow: hidden;
-    border-radius: 2px solid #333;
-    margin: 0px auto;
-}
-.APoppenheimer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-    transition: 0.35s ease;
-}
-.APoppenheimer:hover img{
-    filter: grayscale(0%);
-}
-.APoppenheimer:hover > .APTXToppenheimer img{
-    opacity: 1;
-}
-
-/*The Terminator Interactions*/
-.APthe_terminator {
-    width: 462;
-    height: 1000;
-    overflow: hidden;
-    border-radius: 2px solid #333;
-    margin: 0px auto;
-}
-.APthe_terminator img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-    transition: 0.35s ease;
-}
-.APthe_terminator:hover img{
-    filter: grayscale(0%);
-}
-.APthe_terminator:hover > .APTXTthe_terminator img{
-    opacity: 1;
-}
-
-/*The Godfather Interactions*/
-.APthe_godfather {
-    width: 462;
-    height: 1000;
-    overflow: hidden;
-    border-radius: 2px solid #333;
-    margin: 0px auto;
-}
-.APthe_godfather img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-    transition: 0.35s ease;
-}
-.APthe_godfather:hover img{
-    filter: grayscale(0%);
-}
-.APthe_godfather:hover > .APTXTthe_godfather img{
-    opacity: 1;
-}
-
-/*Text Interactions*/
-.APTXTwhiplash img{
-    position: absolute;
-    opacity: 0;
-    z-index: 800;
-    top: 20%;
-    left: 1.5%;
-    aspect-ratio: 755px/170px;
-    width: 300px;
-    height: auto;
-    transition: 0.35s ease;
-}
-.APTXTthe_terminator img{
-    position: absolute;
-    opacity: 0;
-    z-index: 800;
-    top: 76%;
-    left: 22.9%;
-    aspect-ratio: 1406px/545px;
-    width: 300px;
-    height: auto;
-    transition: 0.35s ease;
-}
-.APTXTnight_crawler img{
-    position: absolute;
-    opacity: 0;
-    z-index: 800;
-    top: 76%;
-    left: 40.2%;
-    aspect-ratio: 1406px/545px;
-    width: 400px;
-    height: auto;
-    transition: 0.35s ease;
-}
-
-.APTXToppenheimer img{
-    position: absolute;
-    opacity: 0;
-    z-index: 800;
-    top: 16%;
-    left: 60.2%;
-    aspect-ratio: 1406px/545px;
-    width: 400px;
-    height: auto;
-    transition: 0.35s ease;
-}
-
-.APTXTthe_godfather img{
-    position: absolute;
-    opacity: 0;
-    z-index: 800;
-    top: 10%;
-    left: 80%;
-    aspect-ratio: 1406px/545px;
-    width: 400px;
-    height: auto;
-    transition: 0.35s ease;
-}
-
+  
 .TXTabout{
     position: absolute;
     opacity: 1;
@@ -213,8 +77,9 @@ html, body{
     font-size:7.5em;
     color: #ffffff;
     margin-top: 4%;
-    margin-left: 2.5%;
+    left: 3.5%;
     transition: 0.35s ease;
+    pointer-events: none;
 }
 
 /* This is the NAVigation*/
