@@ -96,6 +96,9 @@ html, body{
 .APoppenheimer:hover img{
     filter: grayscale(0%);
 }
+.APoppenheimer:hover > .APTXToppenheimer img{
+    opacity: 1;
+}
 
 /*The Terminator Interactions*/
 .APthe_terminator {
@@ -139,7 +142,9 @@ html, body{
 .APthe_godfather:hover img{
     filter: grayscale(0%);
 }
-
+.APthe_godfather:hover > .APTXTthe_godfather img{
+    opacity: 1;
+}
 
 /*Text Interactions*/
 .APTXTwhiplash img{
@@ -175,6 +180,31 @@ html, body{
     height: auto;
     transition: 0.35s ease;
 }
+
+.APTXToppenheimer img{
+    position: absolute;
+    opacity: 0;
+    z-index: 800;
+    top: 16%;
+    left: 60.2%;
+    aspect-ratio: 1406px/545px;
+    width: 400px;
+    height: auto;
+    transition: 0.35s ease;
+}
+
+.APTXTthe_godfather img{
+    position: absolute;
+    opacity: 0;
+    z-index: 800;
+    top: 10%;
+    left: 80%;
+    aspect-ratio: 1406px/545px;
+    width: 400px;
+    height: auto;
+    transition: 0.35s ease;
+}
+
 .TXTabout{
     position: absolute;
     opacity: 1;
