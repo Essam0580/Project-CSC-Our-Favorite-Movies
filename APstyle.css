@@ -76,7 +76,7 @@ html, body{
     font-family: PALSCRI;
     font-size:7.5em;
     color: #ffffff;
-    margin-top: 4%;
+    top: 8%;
     left: 3.5%;
     transition: 0.35s ease;
     pointer-events: none;
