@@ -20,7 +20,17 @@ html, body{
     background-color: #000000;
   color: #FFFFFF;
 }
+
+.TOPTXT{
+  margin: 0;
+  position: relative;
+  font-family: Stardom;
+  top: 50px;
+  text-align: center;
+}
+
 .APtop_images {
+    margin-top: 52px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -68,7 +78,9 @@ html, body{
 .movie:hover .overlay {
     opacity: 1;
 }
-  
+
+
+
 .TXTabout{
     position: absolute;
     opacity: 1;
@@ -76,7 +88,7 @@ html, body{
     font-family: PALSCRI;
     font-size:7.5em;
     color: #ffffff;
-    top: 8%;
+    top: 12%;
     left: 3.5%;
     transition: 0.35s ease;
     pointer-events: none;
