@@ -14,6 +14,7 @@
     font-family: PALSCRI;
     src: url("Fonts/PALSCRI.TTF");
 }
+
 html, body{
     height: 3000;
     margin: 0;
@@ -27,13 +28,17 @@ html, body{
   position: relative;
   font-family: Stardom;
   font-size: clamp(7px, 0.833333vw, 2em);
-  top: 50px;
+  top: 60px;
   text-align: center;
   transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 998;
 }
+
 
 .APtop_images {
     margin-top: 52px;
+    z-index: 998;
     position: fixed;
     display: flex;
     flex-wrap: wrap;
@@ -85,7 +90,6 @@ html, body{
 }
 
 
-
 .TXTabout{
     position: absolute;
     opacity: 1;
@@ -93,10 +97,36 @@ html, body{
     font-family: PALSCRI;
     font-size:7.5em;
     color: #ffffff;
-    top: 12%;
+    top: 9%;
     left: 3.5%;
     transition: 0.35s ease;
     pointer-events: none;
+}
+
+
+.Names{
+  display: flex;
+  position: fixed;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 1000px;
+  background-color: black;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+  z-index: 800;
+
+}
+
+.Name{
+  top: 50%;
+  position: relative;        /* makes overlay position relative to this box */
+  flex: 1 1 20%;
+  text-align: center;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+
+  font-size: 1.2em;
 }
 
 /* This is the NAVigation*/

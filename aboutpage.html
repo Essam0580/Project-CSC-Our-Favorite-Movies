@@ -49,36 +49,35 @@
             <div class="TXTabout">About</div>
         </div>
 
-        <h2>Our team members:</h2>
-        <ul>
-            <li>HAMZA OMAR</li>
-            <li>AHMED OSAMA</li>
-            <li>ESSAM AHMED</li>
-            <li>MOHAMED AMR</li>
-            <li>AMR AYMAN</li>
-        </ul>
-        <hr>
-        <p>We hope you enjoyed exploring our website and thank you!</p>
-        <h3>Our movie index is:
-           <ol style="border: 2px solid white !important; padding: 20px; width: auto; border-radius: 8px;">
-                <li>The Terminator</li>
-                <li>Night Crawler</li>
-                <li>Oppenheimer</li>
-                <li>Whiplash</li>
-                <li>The Godfather</li>
-            </ol>
-        </h3>
+        <div class="Names" id="names">
+          <div class="Name">Ahmed Osama</div>
+          <div class="Name">Essam Ahmed</div>
+          <div class="Name">Mohamed Amr</div>
+          <div class="Name">Hamza Omar</div>
+          <div class="Name">Amr Ayman</div>
+        </div>
+
+        <!-- <p>We hope you enjoyed exploring our website and thank you!</p> -->
 
         <script>
           window.addEventListener("scroll", function () {
-          if (window.scrollY > 5) {
-            document.getElementById("APtop_images").style.opacity = "0";
-            document.getElementById("TOPTXT").style.opacity = "0";
-          } else {
-            document.getElementById("APtop_images").style.opacity = "1";
-            document.getElementById("TOPTXT").style.opacity = "1";
-          }
-        })
+            if (window.scrollY > 5) {
+              document.getElementById("APtop_images").style.opacity = "0";
+              document.getElementById("TOPTXT").style.opacity = "0";
+            } else {
+              document.getElementById("APtop_images").style.opacity = "1";
+              document.getElementById("TOPTXT").style.opacity = "1";
+            }
+          })
+
+          window.addEventListener("scroll", function(){
+            if(500 > window.scrollY > 100){
+              document.getElementById("Names").style.opacity = "1";
+            }
+            else{
+              document.getElementById("Names").style.opacity = "0";
+            }
+          })
         </script>
 
     </body>
