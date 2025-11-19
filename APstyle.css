@@ -14,7 +14,10 @@
     font-family: PALSCRI;
     src: url("Fonts/PALSCRI.TTF");
 }
-
+@font-face{
+  font-family: Montserrat_Black;
+  src: url("Fonts/MONTSERRAT-VARIABLEFONT_WGHT.TTF");
+}
 html, body{
     height: 1380px;
     margin: 0;
@@ -125,8 +128,8 @@ html, body{
   text-align: center;
   aspect-ratio: 2 / 3;
   overflow: hidden;
-
   font-size: 1.2em;
+  font-family: Montserrat_Black;
 }
 
 .Thanks{
@@ -151,6 +154,7 @@ html, body{
   aspect-ratio: 2 / 3;
   overflow: hidden;
   font-size: 3em;
+  font-family: Montserrat_Black;
 }
 
 /* This is the NAVigation*/
