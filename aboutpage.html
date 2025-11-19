@@ -72,7 +72,7 @@
           const Fade1_start = 5;
           const Fade_length = 10;
           const Fadein_length = 10;
-          const Gap = 70;
+          const Gap = 300;
           window.addEventListener("scroll", () => {
             const y = window.scrollY;
 
@@ -84,7 +84,7 @@
 
             //Names
             //fade in
-            const Fadein2_start = Fade1_start + Fade_length + Gap;
+            const Fadein2_start = Fade1_start + Fade_length + 70;
             let opacity_2in = (y-Fadein2_start)/Fade_length;
             opacity_2in = Math.max(0,Math.min(1,opacity_2in));
             Names.style.opacity = opacity_2in;
