@@ -49,7 +49,7 @@
             <div class="TXTabout">About</div>
         </div>
 
-        <div class="Names" id="names">
+        <div class="Names" id="Names">
           <div class="Name">Ahmed Osama</div>
           <div class="Name">Essam Ahmed</div>
           <div class="Name">Mohamed Amr</div>
@@ -57,27 +57,59 @@
           <div class="Name">Amr Ayman</div>
         </div>
 
+        <div class="Thanks" id="Thanks">
+          <div class="Thankyou">We hope you enjoyed exploring our website and thank you!</div>
+        </div>
         <!-- <p>We hope you enjoyed exploring our website and thank you!</p> -->
 
         <script>
-          window.addEventListener("scroll", function () {
-            if (window.scrollY > 5) {
-              document.getElementById("APtop_images").style.opacity = "0";
-              document.getElementById("TOPTXT").style.opacity = "0";
-            } else {
-              document.getElementById("APtop_images").style.opacity = "1";
-              document.getElementById("TOPTXT").style.opacity = "1";
-            }
-          })
+          const Movies = document.getElementById("APtop_images");
+          const TopTXT = document.getElementById("TOPTXT");
+          const Names = document.getElementById("Names");
+          const Thanks = document.getElementById("Thanks");
 
-          window.addEventListener("scroll", function(){
-            if(500 > window.scrollY > 100){
-              document.getElementById("Names").style.opacity = "1";
+          //Fade config
+          const Fade1_start = 5;
+          const Fade_length = 10;
+          const Fadein_length = 10;
+          const Gap = 70;
+          window.addEventListener("scroll", () => {
+            const y = window.scrollY;
+
+            //Movies and text
+            let opacity_1 = 1 - (y-Fade1_start)/Fade_length;
+            opacity_1 = Math.max(0,Math.min(1,opacity_1));
+            Movies.style.opacity = opacity_1;
+            TopTXT.style.opacity = opacity_1;
+
+            //Names
+            //fade in
+            const Fadein2_start = Fade1_start + Fade_length + Gap;
+            let opacity_2in = (y-Fadein2_start)/Fade_length;
+            opacity_2in = Math.max(0,Math.min(1,opacity_2in));
+            Names.style.opacity = opacity_2in;
+            //fade out
+            const Fade2_start = Fadein2_start + Fadein_length + Gap;
+            let opacity_2 = 1 - (y-Fade2_start)/Fade_length;
+            opacity_2 = Math.max(0,Math.min(1,opacity_2));
+            if (opacity_2<1){
+              Names.style.opacity = opacity_2;
             }
-            else{
-              document.getElementById("Names").style.opacity = "0";
+
+            //Thank You
+            //fade in
+            const Fadein3_start = Fade2_start + Fade_length;
+            let opacity_3in = (y-Fadein3_start)/Fade_length;
+            opacity_3in = Math.max(0,Math.min(1,opacity_3in));
+            Thanks.style.opacity = opacity_3in;
+            //fade out
+            const Fade3_start = Fadein3_start + Fadein_length + Gap;
+            let opacity_3 = 1 - (y-Fade3_start)/Fade_length;
+            opacity_3 = Math.max(0,Math.min(1,opacity_3));
+            if (opacity_3<1){
+              Thanks.style.opacity = opacity_3;
             }
-          })
+          });
         </script>
 
     </body>
