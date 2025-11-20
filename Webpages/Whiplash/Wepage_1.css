@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Whiplash_font;
-    src: url("Fonts/CHARLOTTE-SANS-STD-BOOK.ttf");
+    font-family: CHARLOTTE-SANS-STD-BOOK;
+    src: url("Webpages/Whiplash/CHARLOTTE-SANS-STD-BOOK.ttf");
 }
 
 .title_poster{
@@ -16,7 +16,7 @@
 }
 
 .title{
-    font-family: Whiplash_font;
-    font-size: 10em;
+    font-family: CHARLOTTE-SANS-STD-BOOK;
+    font-size: 5em;
     color: white;
 }
