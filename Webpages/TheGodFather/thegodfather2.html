@@ -1,0 +1,84 @@
+<html lang="en">
+<div class="thumb" data-full="/assets/galleries/godfather-1.jpg"><img src="/assets/galleries/godfather-1-thumb.jpg" alt="On-set rehearsal"><div class="caption">On-set rehearsal</div></div>
+<div class="thumb" data-full="/assets/galleries/godfather-2.jpg"><img src="/assets/galleries/godfather-2-thumb.jpg" alt="Costume fitting"><div class="caption">Costume fitting</div></div>
+<div class="thumb" data-full="/assets/galleries/godfather-3.jpg"><img src="/assets/galleries/godfather-3-thumb.jpg" alt="Director & cast"><div class="caption">Director & cast</div></div>
+<div class="thumb" data-full="/assets/galleries/godfather-4.jpg"><img src="/assets/galleries/godfather-4-thumb.jpg" alt="Camera setup"><div class="caption">Camera setup</div></div>
+<div class="thumb" data-full="/assets/galleries/godfather-5.jpg"><img src="/assets/galleries/godfather-5-thumb.jpg" alt="Lighting test"><div class="caption">Lighting test</div></div>
+<div class="thumb" data-full="/assets/galleries/godfather-6.jpg"><img src="/assets/galleries/godfather-6-thumb.jpg" alt="Script table"><div class="caption">Script table</div></div>
+</div>
+
+
+<h3 style="margin-top:18px">Quick Facts</h3>
+<ul style="color:var(--muted);padding-left:18px">
+<li>Principal photography: 1971</li>
+<li>Filming locations: New York City, Sicily</li>
+<li>Cinematography: Gordon Willis</li>
+</ul>
+
+
+<div style="margin-top:16px;font-size:13px;color:var(--muted)">
+<strong>Note:</strong> This is a fan page — don't use copyrighted images or clips without permission.
+</div>
+</aside>
+</section>
+
+
+<section class="card" style="margin-top:18px">
+<h3 style="margin-top:0">Interviews & Anecdotes</h3>
+<p style="color:var(--muted);">Short snippets of on-set interviews, memorable improvisations, production challenges, and how actors prepared for scenes.</p>
+
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+<div class="card" style="padding:12px;">
+<h4 style="margin:0">Marlon Brando — Preparation</h4>
+<p style="color:var(--muted);margin-top:8px">Brando used unique methods to enter character; costume and voice work featured heavily in rehearsal.</p>
+</div>
+<div class="card" style="padding:12px;">
+<h4 style="margin:0">Coppola — Directing Choices</h4>
+<p style="color:var(--muted);margin-top:8px">Coppola took creative risks with camera placement and narrative pacing that paid off during editing.</p>
+</div>
+</div>
+</section>
+
+
+<footer>
+<div>Fan-made tribute · For educational / personal use only · Replace media with licensed assets</div>
+</footer>
+</div>
+
+
+<!-- Lightbox element -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+<button class="close-btn" id="lbClose">Close ✕</button>
+<div class="box" id="lbBox"><img src="" alt="" id="lbImg"></div>
+</div>
+
+
+<script>
+// Simple gallery lightbox
+const gallery = document.getElementById('gallery');
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbClose = document.getElementById('lbClose');
+
+
+gallery.addEventListener('click', e => {
+const thumb = e.target.closest('.thumb');
+if(!thumb) return;
+const full = thumb.getAttribute('data-full');
+lbImg.src = full; // set full-size image path
+lightbox.classList.add('show');
+lightbox.setAttribute('aria-hidden', 'false');
+});
+
+
+lbClose.addEventListener('click', closeLB);
+lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLB(); });
+function closeLB(){ lightbox.classList.remove('show'); lightbox.setAttribute('aria-hidden', 'true'); lbImg.src = ''; }
+
+
+// Accessibility: ESC to close
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLB(); });
+</script>
+</body>
+</html>
