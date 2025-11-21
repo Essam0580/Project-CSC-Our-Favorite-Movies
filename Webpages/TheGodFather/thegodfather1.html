@@ -1,48 +1,123 @@
 <!DOCTYPE html>
-<html>
-  
+<html lang="en">
 <head>
- <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="stylegodfather1.css">
-<title>The Godfather</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Godfather — Tribute</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-  
-<nav>
-  <a href="../../index.html">Home</a>
-  <a href="../../aboutpage.html">About</a>
-  <a href="Webpages/Whiplash/Wepage_1.html">Whiplash</a>
-  <a href="SourceAddHere.html">The Terminator</a>
-  <a href="SourceAddHere.html">NightCrawler</a>
-  <a href="SourceAddHere.html">Oppenheimer</a>
-  <a href="Webpages/TheGodFather/thegodfather.html">The Godfather</a>
-</nav>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <h1 class="logo-title">The Godfather</h1>
+        <p class="tagline">A Francis Ford Coppola Masterpiece</p>
+      </div>
 
-    <header>
-        <h1>The Godfather</h1>
-        <p>A classic masterpiece directed by Francis Ford Coppola</p>
-    </header>
+      <button id="nav-toggle" aria-controls="main-nav" aria-expanded="false">
+        ☰
+      </button>
 
-    <section id="summary">
-        <h2>Movie Summary</h2>
-        <p>The Godfather (1972) follows the powerful Italian-American Corleone crime family, focusing on the rise of Michael Corleone as he transforms from a reluctant outsider to a ruthless mafia boss.</p>
+      <nav id="main-nav" class="nav">
+        <a href="#summary">Summary</a>
+        <a href="#characters">Characters</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <img src="images/poster.jpg" alt="The Godfather poster" class="hero-img" />
+        <div class="hero-text">
+          <h2>Power. Family. Legacy.</h2>
+          <p>Follow the Corleone family through betrayal, loyalty and the rise of Michael Corleone.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#summary">Read Summary</a>
+            <button class="btn outline" id="quote-btn">Show Famous Quote</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="characters">
-        <h2>Main Characters</h2>
-        <ul>
-            <li>Vito Corleone – The Godfather</li>
-            <li>Michael Corleone – His youngest son</li>
-            <li>Sonny Corleone – Hot-headed eldest son</li>
-            <li>Tom Hagen – Consigliere</li>
+    <section id="summary" class="section">
+      <div class="container">
+        <h2 class="section-title">Movie Summary</h2>
+        <p class="lead">Released in 1972, <strong>The Godfather</strong> is a crime drama that chronicles the Corleone mafia family, starring Marlon Brando and Al Pacino. It explores power, family obligations, and the cost of ambition.</p>
+      </div>
+    </section>
+
+    <section id="characters" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Main Characters</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="images/vito.jpg" alt="Vito Corleone">
+            <h3>Vito Corleone</h3>
+            <p>The patriarch — wise, feared, and respected.</p>
+          </article>
+
+          <article class="card">
+            <img src="images/michael.jpg" alt="Michael Corleone">
+            <h3>Michael Corleone</h3>
+            <p>Reluctant son who becomes the family's ruthless leader.</p>
+          </article>
+
+          <article class="card">
+            <img src="images/sonny.jpg" alt="Sonny Corleone">
+            <h3>Sonny Corleone</h3>
+            <p>Hot-headed eldest son; impulsive and fierce.</p>
+          </article>
+
+          <article class="card">
+            <img src="images/tom.jpg" alt="Tom Hagen">
+            <h3>Tom Hagen</h3>
+            <p>Consigliere — calm, legal-minded, loyal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery">
+          <img src="images/scene1.jpg" alt="Scene 1">
+          <img src="images/scene2.jpg" alt="Scene 2">
+          <img src="images/scene3.jpg" alt="Scene 3">
+          <img src="images/scene4.jpg" alt="Scene 4">
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Famous Quotes</h2>
+        <ul class="quotes-list">
+          <li>"I'm gonna make him an offer he can't refuse."</li>
+          <li>"A man who doesn't spend time with his family can never be a real man."</li>
+          <li>"Keep your friends close, but your enemies closer."</li>
         </ul>
+      </div>
     </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <img src="images/godfather1.jpg" alt="The Godfather">
-        <img src="images/godfather2.jpg" alt="Michael Corleone">
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About This Page</h2>
+        <p>This tribute uses a Godfather-style display font (e.g. Corleone). Replace images and tweak copy as needed. All content on this page is for learning/demo purposes; respect copyright when using official assets.</p>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <p>Made with ☕️ · &copy; <span id="year"></span> — Tribute page</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
