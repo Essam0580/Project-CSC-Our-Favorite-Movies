@@ -200,7 +200,7 @@ nav a:hover {
   padding: 14px 28px;
   background: #c9a552;     /* Gold */
   color: black;
-  text-decoration: overline;
+  text-decoration: underline overline;
   font-size: 22px;
   font-weight: bold;
   border-radius: 8px;
