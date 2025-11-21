@@ -208,9 +208,11 @@ nav {
   font-family: Whiplash_font;
   justify-content: center;
   gap:32px;
-  background-color: #222222;
+  background-color: rgb(34, 34, 34, 0.1);
   padding: 15px;
   text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 nav a {
   color: #ffffff;
