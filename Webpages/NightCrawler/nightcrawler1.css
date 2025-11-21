@@ -31,10 +31,7 @@ p{
 
 }
 body {
-background-image: url(bg.jbg)
-     background-size: cover;
-  background-position: center;
-    background-color: grey;
+background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
     
 }
 img {
@@ -81,15 +78,15 @@ h2{
     length:122px;
   } 
   button{
-color: rgb(255, 255, 255);
-background-color: black;
+color: rgb(35, 35, 35);
+background-color:#f5c518;
+;
 width: 100px;
 height:77px;
 font-size: 22px;
-      border-style: inset;
-      border-color: gold;
   }
   
+
 
 
 
