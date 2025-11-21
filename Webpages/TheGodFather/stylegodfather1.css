@@ -1,6 +1,6 @@
 @font-face {
-  font-family: Asimovian;
-  src: url("Fonts/Asimovian-Regular.woff2");
+  font-family: "Corleone";
+ src: url("fonts/Corleone.ttf") format("truetype");
 }
 @font-face {
   font-family: Stardom;
