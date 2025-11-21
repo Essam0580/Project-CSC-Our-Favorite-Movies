@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Whiplash_font;
+    src:url("../../Fonts/CHARLOTTE-SANS-STD-BOOK.ttf") format("truetype");
+}
+html, body{
+    height: 400vh;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #FFFFFF;
+}

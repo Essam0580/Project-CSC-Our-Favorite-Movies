@@ -7,7 +7,7 @@ html, body{
     margin: 0;
     padding: 0;
     background-color: #000000;
-  color: #FFFFFF;
+    color: #FFFFFF;
 }
 .title_poster, .details{
     z-index: 998;
