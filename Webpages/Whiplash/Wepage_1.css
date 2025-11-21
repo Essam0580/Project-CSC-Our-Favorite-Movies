@@ -195,3 +195,31 @@ html, body{
         opacity: 1;
     }
 }
+
+nav {
+  position: fixed !important;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  font-family: Whiplash_font;
+  justify-content: center;
+  gap:32px;
+  background-color: #222222;
+  padding: 15px;
+  text-decoration: none;
+}
+nav a {
+  color: #ffffff;
+  font-family: Whiplash_font;
+  transition: color 0.5s ease;
+  text-decoration: none;
+  height: 15px;
+}
+
+nav a:hover {
+  color: #ec2c2c;
+}
