@@ -3,7 +3,7 @@
     src:url("../../Fonts/CHARLOTTE-SANS-STD-BOOK.ttf") format("truetype");
 }
 html, body{
-    height: 400vh;
+    max-height: 400vh;
     margin: 0;
     padding: 0;
     background-color: #000000;
@@ -56,9 +56,11 @@ html, body{
     flex-direction: column; 
     justify-content: flex-start;
     width: 100%;
-    height: 100vh;
+    max-height: 100vh;
     background-color: black;
-    box-sizing: border-box;
+    padding-bottom: 10%;
+    
+/*     box-sizing: border-box; */
 }
 
 .image_wrapper_1 {
@@ -101,7 +103,7 @@ html, body{
     font-family: Whiplash_font;
     padding-left: 5%;
     padding-right: 5%;
-    font-size: clamp(0.2em, 2vw, 2em);
+    font-size: clamp(12px, 3vh, 1.5em);
     opacity: 0;
     animation: appear 1s ease forwards 1.5s;
     animation-timeline: view();
@@ -124,7 +126,7 @@ html, body{
     text-align: left;
     font-family: Whiplash_font;
     padding-right: 5%;
-    font-size: clamp(0.2em, 2vw, 2em);
+    font-size: clamp(12px, 3vh, 1.5em);
     opacity: 0;
     animation: appear 1s ease forwards 1.5s;
     animation-timeline: view();
