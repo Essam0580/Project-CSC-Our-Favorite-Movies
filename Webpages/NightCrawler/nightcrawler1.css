@@ -31,7 +31,7 @@ p{
 
 }
 body {
-    background-image:url(bg.jpg)
+    <img src="bg.jpg" alt="background showing theater seats">
 }
 img {
     width: 300px;
@@ -83,3 +83,4 @@ height:77px;
 font-size: 22px;
   }
   
+
