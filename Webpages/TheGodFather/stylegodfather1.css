@@ -117,24 +117,7 @@ nav a:hover {
   color: var(--muted);
   margin: 0 0 15px;
 }
-.btn {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  margin-right: 10px;
-}
-.btn.primary {
-  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
-  color: #111;
-}
-.btn.outline {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid rgba(230,184,0,0.12);
+
 }
 .section {
   padding: 50px 0;
