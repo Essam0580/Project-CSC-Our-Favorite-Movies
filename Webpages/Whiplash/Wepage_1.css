@@ -1,22 +1,57 @@
 @font-face {
     font-family: CHARLOTTE-SANS-STD-BOOK;
-    src: url("Webpages/Whiplash/CHARLOTTE-SANS-STD-BOOK.ttf");
+    src:url("../../Fonts/CHARLOTTE-SANS-STD-BOOK.ttf") format("truetype");
 }
-
+html, body{
+    height: 300vh;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+  color: #FFFFFF;
+}
 .title_poster{
     z-index: 998;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    height: 1000px;
+    height: 100vh;
     background-color: black;
     overflow: hidden;
     transition: opacity 0.5s ease;
 }
 
 .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     font-family: CHARLOTTE-SANS-STD-BOOK;
-    font-size: 5em;
+    font-size: clamp(1em, 10vw, 10em);
+    letter-spacing: 0.5em;
     color: white;
+}
+
+.title_poster img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    flex: 1 1 100%;
+    justify-content: center;
+    aspect-ratio: 1920/796;
+    width: 100vw;
+    height: max-content;
+    overflow: hidden;
+    clip-path: inset(0 100% 0 0);
+    animation: reveal 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+@keyframes reveal {
+    from{
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
 }
