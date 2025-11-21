@@ -1,5 +1,5 @@
 @font-face {
-    font-family: CHARLOTTE-SANS-STD-BOOK;
+    font-family: Whiplash_font;
     src:url("../../Fonts/CHARLOTTE-SANS-STD-BOOK.ttf") format("truetype");
 }
 html, body{
@@ -26,10 +26,13 @@ html, body{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    font-family: CHARLOTTE-SANS-STD-BOOK;
+    font-family: Whiplash_font;
     font-size: clamp(1em, 10vw, 10em);
     letter-spacing: 0.5em;
     color: white;
+    opacity: 0;
+    animation: opacity 1.5s ease forwards 0.5s;
+    pointer-events: none;
 }
 
 .title_poster img{
@@ -44,7 +47,74 @@ html, body{
     height: max-content;
     overflow: hidden;
     clip-path: inset(0 100% 0 0);
-    animation: reveal 2s cubic-bezier(.28,.38,.07,1) forwards;
+    animation: reveal 2s cubic-bezier(.28,.38,.07,1) forwards 2.25s;
+}
+
+.plot_summary {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    box-sizing: border-box;
+}
+
+.image_wrapper {
+    position: relative; 
+    width: 70vw;        
+    height: max-content;
+    aspect-ratio: 1920/799;
+}
+
+.image_wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; 
+    opacity: 0;
+    animation: appear 1s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.image_wrapper h1 {
+    position: absolute;
+    top: 90%;       
+    left: 35%;     
+    transform: translate(-50%, -50%); 
+    font-size: clamp(1em, 4vw, 5em); 
+    font-family: Whiplash_font;
+    letter-spacing: 0.25em;
+    color: white;
+    text-align: left;
+    white-space: nowrap;
+    opacity: 0;
+    animation: appear-50-left 1s ease forwards 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.plot_summary p{
+    text-align: left;
+    font-family: Whiplash_font;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: clamp(0.2em, 2vw, 2em);
+    opacity: 0;
+    animation: appear 1s ease forwards 1.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+
+@keyframes opacity {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes reveal {
@@ -53,5 +123,28 @@ html, body{
     }
     to {
         clip-path: inset(0 0 0 0);
+    }
+}
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: translatey(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes appear-50-left {
+    from{
+        opacity: 0;
+        transform: translateY(-10%);
+        transform: translateX(-50%);
+        left: 35%;
+    }
+    to {
+        opacity: 1;
+        
     }
 }
