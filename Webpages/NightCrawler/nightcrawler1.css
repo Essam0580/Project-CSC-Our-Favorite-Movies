@@ -65,13 +65,14 @@ h2{
 .pp{
     align-items: center;
 }
-.list{color: rgb(154, 198, 233);
+.list{color: white;
     font-size: 23px;
     margin-left: 700px;
     margin-top: -200px;
     border-style: groove;
     border-top-left-radius:4px ;
     border-color: rgb(248, 255, 114);
+      background-color:black
 
 
 }
