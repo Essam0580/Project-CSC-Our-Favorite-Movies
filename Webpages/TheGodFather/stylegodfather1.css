@@ -1,15 +1,24 @@
 @font-face {
-  font-family: "Corleone";
- src: url("fonts/Corleone.ttf") format("truetype");
+    font-family: The Godfather;
+    src:url("../../Fonts/CHARLOTTE-SANS-STD-BOOK.ttf") format("truetype");
 }
-@font-face {
-  font-family: Stardom;
-  src: url("Fonts/Stardom-Regular.ttf");
+html, body{
+    height: 400vh;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #FFFFFF;
 }
-@font-face {
-  font-family: Playfair;
-  src: url("Fonts/PlayfairDisplay-Regular[1].ttf");
-
+.title_poster, .details{
+    z-index: 998;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
 
 /*This is the navigation bar*/
 nav {
