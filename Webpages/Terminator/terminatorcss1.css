@@ -19,11 +19,23 @@ body {
   font-family: Stardom, sans-serif;
 }
 
+/*picturestuff*/
+.robot-section {
+  overflow: auto;
+  margin-bottom: 20px; 
+}
+
 .robot-pic {
-  float:right;
-  margin-bottom: 10px;
+  float: right;
   width: 400px;
 }
+
+.robot-section hr {
+  clear: both;      
+  border: 1px solid #fff; 
+}
+/*picturestuff*/
+
 hr {
   clear:both;
 }
