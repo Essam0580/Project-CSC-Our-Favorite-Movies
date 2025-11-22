@@ -23,6 +23,8 @@ body {
 nav {
   position: fixed !important;
 
+  padding-top: 70px;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -45,5 +47,5 @@ nav a {
 }
 
 nav a:hover {
-  color: #ffcc00;
+  color: #ff0000;
 }
