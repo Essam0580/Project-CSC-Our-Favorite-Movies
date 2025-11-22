@@ -1,1 +1,19 @@
+nav {
+  display: flex;
+  gap: 15px;
+  background: #0c0c0c;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+nav a:hover {
+  background: rgba(230,184,0,0.1);
+  color: var(--gold);
+}
 
