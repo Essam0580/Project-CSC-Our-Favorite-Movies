@@ -102,10 +102,11 @@ nav a:hover {
   align-items: center;
 }
 .hero-img {
-  width: 100%;
-  max-width: 360px;
-  border-radius: var(--radius);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
 }
 .hero-text h2 {
   font-family: "Corleone", serif;
@@ -117,24 +118,7 @@ nav a:hover {
   color: var(--muted);
   margin: 0 0 15px;
 }
-.btn {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  margin-right: 10px;
-}
-.btn.primary {
-  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
-  color: #111;
-}
-.btn.outline {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid rgba(230,184,0,0.12);
+
 }
 .section {
   padding: 50px 0;
@@ -212,12 +196,12 @@ nav a:hover {
   nav { flex-wrap: wrap; justify-content: center; }
 }
 
-..btn-godfather {
+.btn-godfather {
   display: inline-block;
   padding: 14px 28px;
   background: #c9a552;     /* Gold */
   color: black;
-  text-decoration: none;
+  text-decoration: underline overline;
   font-size: 22px;
   font-weight: bold;
   border-radius: 8px;
@@ -232,4 +216,5 @@ nav a:hover {
   transform: scale(1.05);
   box-shadow: 0 0 18px rgba(201,165,82,0.7);
 }
+
 

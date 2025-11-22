@@ -10,7 +10,174 @@ html, body{
     color: #FFFFFF;
 }
 
+.main_holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#Layer_1{
+    scale: 50%;
+}
+svg .cls-1{
+    stroke-dasharray: 642.1551513671875;
+    stroke-dashoffset: 642.1551513671875;
+    fill: transparent;
+    animation: cls-1 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
 
+svg .cls-2{
+    stroke-dasharray: 488.7200622558594;
+    stroke-dashoffset: 488.7200622558594;
+    fill: transparent;
+    animation: cls-2 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+svg .cls-3{
+    stroke-dasharray: 207.92001342773438;
+    stroke-dashoffset: 207.92001342773438;
+    fill: transparent;
+    animation: cls-3 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+svg .cls-4{
+    stroke-dasharray: 378.97802734375;
+    stroke-dashoffset: 378.97802734375;
+    fill: transparent;
+    animation: cls-4 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+svg .cls-5{
+    stroke-dasharray: 275.8599853515625;
+    stroke-dashoffset: 275.8599853515625;
+    fill: transparent;
+    animation: cls-5 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+svg .cls-6{
+    stroke-dasharray: 417.7961120605469;
+    stroke-dashoffset: 417.7961120605469;
+    fill: transparent;
+    animation: cls-6 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+svg .cls-7{
+    stroke-dasharray: 386.9460144042969;
+    stroke-dashoffset: 386.9460144042969;
+    fill: transparent;
+    animation: cls-7 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+svg .cls-8{
+    stroke-dasharray: 488.72003173828125;
+    stroke-dashoffset: 488.72003173828125;
+    fill: transparent;
+    animation: cls-8 2s cubic-bezier(.28,.38,.07,1) forwards;
+}
+
+@keyframes cls-1{
+    0%{
+        stroke-dashoffset: 642.1551513671875;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
+@keyframes cls-2{
+    0%{
+        stroke-dashoffset: 488.7200622558594;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
+@keyframes cls-3{
+    0%{
+        stroke-dashoffset: 207.92001342773438;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
+@keyframes cls-4{
+    0%{
+        stroke-dashoffset: 378.97802734375;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
+@keyframes cls-5{
+    0%{
+        stroke-dashoffset: 275.8599853515625;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
+@keyframes cls-6{
+    0%{
+        stroke-dashoffset: 417.7961120605469;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
+@keyframes cls-7{
+    0%{
+        stroke-dashoffset: 386.9460144042969;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
+@keyframes cls-8{
+    0%{
+        stroke-dashoffset: 488.72003173828125;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
 
 
 nav {

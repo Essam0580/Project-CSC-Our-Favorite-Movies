@@ -31,7 +31,8 @@ p{
 
 }
 body {
-    background-image:url(bg.jpg)
+background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+    
 }
 img {
     width: 300px;
@@ -61,13 +62,14 @@ h2{
 .pp{
     align-items: center;
 }
-.list{color: rgb(154, 198, 233);
+.list{color: white;
     font-size: 23px;
     margin-left: 700px;
     margin-top: -200px;
     border-style: groove;
     border-top-left-radius:4px ;
     border-color: rgb(248, 255, 114);
+      background-color:black
 
 
 }
@@ -76,10 +78,17 @@ h2{
     length:122px;
   } 
   button{
-color: rgb(255, 255, 255);
-background-color: rgb(213, 65, 65);
+color: rgb(35, 35, 35);
+background-color:#f5c518;
+;
 width: 100px;
 height:77px;
 font-size: 22px;
   }
   
+
+
+
+
+
+
