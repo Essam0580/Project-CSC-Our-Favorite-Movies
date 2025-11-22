@@ -116,6 +116,7 @@ nav a:hover {
 }
 
 .midphoto {
-    width:400px !important;
+    width: 400px;
+    height: auto;
     float: right;
 }
