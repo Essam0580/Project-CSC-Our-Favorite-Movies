@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Corleone";
+  src: url("fonts/Corleone.woff2") format("woff2"),
+       url("fonts/Corleone.woff") format("woff"),
+       url("fonts/Corleone.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 nav {
   display: flex;
   gap: 15px;
@@ -16,4 +26,5 @@ nav a:hover {
   background: rgba(230,184,0,0.1);
   color: var(--gold);
 }
+
 
