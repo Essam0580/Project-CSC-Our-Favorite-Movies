@@ -26,8 +26,7 @@ h1{
 
 /*picturestuff*/
 .robot-section {
-  overflow: auto;
-  margin-bottom: 20px; 
+  overflow: auto;; 
 }
 
 .robot-pic {
@@ -114,4 +113,9 @@ nav a:hover {
     width: 100%;
     color: #ffffff;
     margin: 0;
+}
+
+.midphoto {
+    width:300px;
+    float: right;
 }
