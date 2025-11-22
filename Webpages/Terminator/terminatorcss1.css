@@ -24,7 +24,9 @@ body {
   margin-bottom: 10px;
   width: 600px;
 }
-
+hr {
+  clear:both;
+}
 
 nav {
   position: fixed !important;
