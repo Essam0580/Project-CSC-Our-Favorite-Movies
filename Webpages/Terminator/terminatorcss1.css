@@ -19,6 +19,11 @@ body {
   font-family: Stardom, sans-serif;
 }
 
+h1{
+    text-align: center;
+    font-family: Stardom;   
+}
+
 /*picturestuff*/
 .robot-section {
   overflow: auto;
