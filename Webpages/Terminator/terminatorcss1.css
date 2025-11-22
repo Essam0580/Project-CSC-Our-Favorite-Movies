@@ -20,6 +20,11 @@ body {
   font-family: Stardom, sans-serif;
 }
 
+.robot-pic {
+  float:right;
+  width: 200px;
+}
+
 
 nav {
   position: fixed !important;
