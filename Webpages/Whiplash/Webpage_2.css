@@ -16,9 +16,12 @@ html, body{
     align-items: center;
     height: 100vh;
 }
+
 #Layer_1{
     scale: 50%;
 }
+
+/* title animation */
 svg .cls-1{
     stroke-dasharray: 642.1551513671875;
     stroke-dashoffset: 642.1551513671875;
