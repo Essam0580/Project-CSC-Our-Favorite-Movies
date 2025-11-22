@@ -82,9 +82,9 @@ nav a:hover {
   text-transform: uppercase;
   font-family: Asimovian, sans-serif;
   box-shadow: 0 0 10px #ff0000;
-  text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .t2:hover {
