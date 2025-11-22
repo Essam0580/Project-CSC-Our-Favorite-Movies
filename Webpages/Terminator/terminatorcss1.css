@@ -22,7 +22,8 @@ body {
 
 .robot-pic {
   float:right;
-  width: 200px;
+  margin-bottom: 10px;
+  width: 600px;
 }
 
 
