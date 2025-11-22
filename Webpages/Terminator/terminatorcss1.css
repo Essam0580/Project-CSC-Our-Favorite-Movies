@@ -96,5 +96,22 @@ nav a:hover {
     background-color: #941F1F;
     padding: 20px;
     width: 100%;
-    color: #ffffff; 
+    color: #ffffff;
+    margin: 0;
+}
+
+.sent1{
+    background-color: #941F1F;
+    padding: 20px;
+    width: 100%;
+    color: #ffffff;
+    margin: 0;
+}
+
+.sent2{
+    background-color: #941F1F;
+    padding: 20px;
+    width: 100%;
+    color: #ffffff;
+    margin: 0;
 }
