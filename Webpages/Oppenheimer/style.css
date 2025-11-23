@@ -4,84 +4,63 @@
 }
 
 * {
-    font-family: "FranklinGothicCondensed", sans-serif;
+    font-family: "FranklinGothicCondensed", Arial, sans-serif;
 }
-
 
 /* Body background: Black */
 body {
     background-color: black;
     margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    padding-top: 20px; 
 }
 
-/* Dropdown container */
-.dropdown {
-    width: 150px;         /* Slightly wider for better text fit */
-    position: relative;
+.dropdown-wrapper {
+    width: 150px;
     margin-left: 20px;
 }
 
-/* Clickable header  */
+/* Clickable header */
 .dropdown-header {
     background-color: #d4ac0d; /* Dark Yellow */
-    color: #1a1a1a;            /* Dark Text */
+    color: #FFFFFF;            /* white Text */
     padding: 12px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    text-align: center;        /* Centered Text */
+    text-align: center;
     
-    /* Dark Gray Borders */
+    /* Borders: Dark Gray */
     border: 3px solid #333;    
-    border-bottom: none;       /* Remove bottom border to merge with line */
-    border-radius: 8px 8px 0 0; /* Rounded top corners only */
+    border-bottom: none;       /* Connects to the list */
+    border-radius: 8px 8px 0 0; 
 }
 
 .dropdown-header:hover {
-    background-color: #b7950b; /* Slightly darker yellow on hover */
+    background-color: #b7950b;
 }
 
-/* The Line (*/
-.small-bar {
-    width: 100%;               
-    height: 4px;               /* Visible thickness */
-    background-color: #333;    /* Dark Gray Line */
-    display: block;
-    margin: 0;
-    
-    /* This ensures the line looks connected to the header borders */
-    box-sizing: border-box; 
-}
-
-/* Dropdown content (The list below the line) */
+/* Dropdown content  */
 .dropdown-content {
     display: none;             /* Hidden by default */
-    background-color: #1a1a1a; /* Dark Gray background for list */
+    background-color: #1a1a1a; /* Dark Gray background */
+    width: 100%;             
     padding: 10px 0;
-    width: 100%;
     
-    /* Borders to match the top */
+    /* Borders */
     border: 3px solid #333;
-    border-top: none;          /* Remove top border to merge with line */
-    border-radius: 0 0 8px 8px;
-    box-sizing: border-box;    /* Ensures padding doesn't break width */
-}
-
-/* Class to show the menu (toggled via JS) */
-.show {
-    display: block;
+    border-top: none;          /* Connects to header */
+    border-bottom: none;       /* Connects to the long line below */
+    box-sizing: border-box;    
 }
 
 /* Vertical links */
 .dropdown-content a {
     display: block;
-    width: 85%;                /* Centered inside the dropdown */
+    width: 85%;
     margin: 5px auto;        
     padding: 8px 0;
     color: #d4ac0d;            /* Yellow text */
-    background-color: #333;    /* Dark gray button background */
+    background-color: #333;    /* Dark gray button */
     text-decoration: none;
     text-align: center;      
     border-radius: 4px;
@@ -89,6 +68,13 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #555;    /* Lighter gray on hover */
+    background-color: #555; 
     color: white;
+}
+
+.full-screen-line {
+    width: 100%;
+    height: 4px;
+    background-color: #333;    /* Dark Gray */
+    margin-top: 0;             /* Sits directly under the button/list */
 }
