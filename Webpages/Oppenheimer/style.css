@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "FranklinGothicCondensed";
+    src: url("Webpages/Oppenheimer/Fonts/Franklin Gothic Condensed.otf") format("opentype");
+}
+
+* {
+    font-family: "FranklinGothicCondensed", sans-serif;
+}
+
+
+/* Body background */
+body {
+    background-color: black;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Dropdown container */
+.dropdown {
+    width: 120px; /* less wide */
+    border-radius: 8px; 
+    margin: 20px 0;
+    position: relative; /* for dropdown content to overlap line */
+}
+
+/* The clickable top box */
+.dropdown-header {
+    background-color: #d6d6a0; 
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0; /* round top corners */
+}
+
+/* Small horizontal line under header */
+.small-bar {
+    width: 100%;
+    background-color: #cccccc; 
+    padding: 5px;
+    display: block;
+}
+
+/* Dropdown content  */
+.dropdown-content {
+    display: none;
+    background-color: #1a1a1a; /* dark gray space */
+    border-radius: 0 0 8px 8px;
+    padding: 5px 0;
+}
+
+/* Links in vertical layout */
+.dropdown-content a {
+    display: block;
+    padding: 6px 10px;
+    color: white;
+    background-color: #333; /* darker gray */
+    text-decoration: none;
+    text-align: center;     /* center text */
+    margin: 4px;
+    border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+    background-color: #555555; /* hover effect */
+}
+
