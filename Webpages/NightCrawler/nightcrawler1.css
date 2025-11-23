@@ -82,7 +82,7 @@ color: rgb(35, 35, 35);
 background-color:#f5c518;
 ;
 width: 100px;
-height:77px;
+height:60px;
 font-size: 22px;
       cursor:pointer;
        box-shadow: 0 0 30px #f5c518;
@@ -140,4 +140,5 @@ nav a:hover {
 .navbar h1 {
     color: rgb(255, 255, 255);
 }
+
 
