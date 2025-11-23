@@ -49,14 +49,6 @@ h1{
   background-color: navy;
 }
 
-.photobox img {
-  width: 400px;          
-  height: 400px;         
-  object-fit: cover;    
-  margin: 10px 0;        
-  border-radius: 20px;   
-}
-
 
 
 nav {
