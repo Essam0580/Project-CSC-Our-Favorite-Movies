@@ -17,7 +17,10 @@ h1{
 }
 
 .earn{
-
+  background-color: color-mix(in hsl, #ffcc00 50%, #222222 50%);
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 .center{
@@ -25,11 +28,17 @@ h1{
   font-family: Asimovian !important;
   background-color: color-mix(in hsl, #ffcc00 50%, #222222 50%);
   width: 100%;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 .sources{
   text-align: center;
   font-family: Stardom;
+  background-color: color-mix(in lab, plum 60%, #123456 50%);
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 
