@@ -18,7 +18,6 @@ h1{
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
   color: #ffffff;
   font-family: Stardom, sans-serif;
 }
@@ -61,7 +60,7 @@ body {
   background: #101011;
   font-size: medium;
   padding: 24px 48px;   
-  border: 2px solid #D4AF37;
+  border: 2px solid ;
   font-family: Asimovian, sans-serif;
   display: block;      
   margin: 40px auto;    
