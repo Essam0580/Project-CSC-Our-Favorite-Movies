@@ -179,6 +179,7 @@ html, body{
     width: auto;
     filter: grayscale(1);
     transition: filter 0.3s ease;
+    z-index: 997;
 }
 
 .mt_img2{
@@ -231,6 +232,7 @@ html, body{
     color: #FFFFFF;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 997;
 }
 
 .mt_img1:hover img,.mt_img2:hover img,.mt_img3:hover img{
@@ -249,6 +251,74 @@ html, body{
     animation-timeline: scroll();
     animation-range-start: 30%, 30%;
     animation-range-end: 39%, 100%;
+    z-index: 996;
+}
+
+.Character_dynamics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+.cd_img{
+    position: absolute;
+    aspect-ratio: 1920 / 800;
+    width: 100vw;
+    height: auto;
+    z-index: 995;
+    clip-path: inset(0 100% 0 0);
+    animation: reveal cubic-bezier(.28,.38,.07,1) forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30% ;
+}
+
+.cd_title{
+    position: absolute;
+    top: 4vh;
+    color: #000000;
+    font-size: 5em;
+    font-family: Whiplash_font;
+}
+
+.cd_p{
+    position: absolute;
+    width: calc(100vw - 370px);
+    height: calc(100vw/(1920/800));
+    left: 370px;
+    top: 88vh;
+    white-space: normal;
+    z-index: 995;
+}
+
+.cd_p p{
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    font-family: Poppins_extrabold;
+    z-index: 995;
+    text-align: center;
+}
+
+.quote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: calc(100vw - 370px);
+    left: 340px;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+.quote h1{
+    color: #000000;
+    font-size: 5em;
+    font-family: Whiplash_font;
+    opacity: 1;
 }
 
 
@@ -518,6 +588,15 @@ svg .cls-8{
     }
     100%{
         left: -300px;
+    }
+}
+
+@keyframes reveal {
+    from{
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
     }
 }
 
