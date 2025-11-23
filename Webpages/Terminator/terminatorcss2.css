@@ -21,9 +21,9 @@ h1{
 }
 
 .center{
-  text-align: center;
-  font-family: Asimovian;
-  background-color: color-mix(in hsl decreasing hue, #ffcc00 50%, #222222 color 50%);
+  text-align: center !important;
+  font-family: Asimovian !important;
+  background-color: color-mix(in hsl, #ffcc00 50%, #222222 50%);
   width: 100%;
 }
 
