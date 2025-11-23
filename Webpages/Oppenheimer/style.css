@@ -22,7 +22,7 @@ body {
 
 /* Clickable header */
 .dropdown-header {
-    background-color: #d6d6a0; 
+    background-color: #f1c232; 
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -33,7 +33,7 @@ body {
 
 /* Small horizontal line UNDER header */
 .small-bar {
-    width: 100%;               /* same width as dropdown (120px) */
+    width: 100%;               /* same width as dropdown  */
     height: 3px;               /* Made correctly thin */
     background-color: #cccccc;
     display: block;
