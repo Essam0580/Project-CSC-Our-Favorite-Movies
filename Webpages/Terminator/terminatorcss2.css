@@ -43,7 +43,7 @@ body {
 .sources{
   text-align: center;
   font-family: Stardom;
-  background-color: color-mix(in lab, plum 60%, #123456 50%);
+  background-color: blue;
   width: 100%;
   padding: 20px;
   border-radius: 30px;
@@ -55,7 +55,36 @@ body {
   flex-direction: column; 
   align-items: center;   
   background-color: navy;
-}S
+}
+
+.t2 {
+  background: #101011;
+  font-size: medium;
+  padding: 24px 48px;   
+  border: 2px solid #D4AF37;
+  font-family: Asimovian, sans-serif;
+  display: block;      
+  margin: 40px auto;    
+  transition: all 0.3s ease;
+        
+}
+
+.t2:hover {
+  background: #ff0000;
+  color: #000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
