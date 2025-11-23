@@ -8,62 +8,87 @@
 }
 
 
-/* Body background */
+/* Body background: Black */
 body {
     background-color: black;
     margin: 0;
     padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 /* Dropdown container */
 .dropdown {
-    width: 120px;         /* keeps everything at this width */
+    width: 150px;         /* Slightly wider for better text fit */
     position: relative;
-    margin-left: 20px;     /* keep it on the left */
+    margin-left: 20px;
 }
 
-/* Clickable header */
+/* Clickable header  */
 .dropdown-header {
-    background-color: #d6d6a0; 
-    color: white;
-    padding: 10px;
+    background-color: #d4ac0d; /* Dark Yellow */
+    color: #1a1a1a;            /* Dark Text */
+    padding: 12px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 8px 8px 0 0;
-    text-align: center;        /*  Fix text centering */
+    text-align: center;        /* Centered Text */
+    
+    /* Dark Gray Borders */
+    border: 3px solid #333;    
+    border-bottom: none;       /* Remove bottom border to merge with line */
+    border-radius: 8px 8px 0 0; /* Rounded top corners only */
 }
 
-/* Small horizontal line UNDER header */
+.dropdown-header:hover {
+    background-color: #b7950b; /* Slightly darker yellow on hover */
+}
+
+/* The Line (*/
 .small-bar {
-    width: 100%;               /* same width as dropdown (120px) */
-    height: 3px;               /* Made correctly thin */
-    background-color: #cccccc;
+    width: 100%;               
+    height: 4px;               /* Visible thickness */
+    background-color: #333;    /* Dark Gray Line */
     display: block;
-    margin: 0;                 /* no space above/below */
+    margin: 0;
+    
+    /* This ensures the line looks connected to the header borders */
+    box-sizing: border-box; 
 }
 
-/* Dropdown content */
+/* Dropdown content (The list below the line) */
 .dropdown-content {
-    display: none;
-    background-color: #1a1a1a;
-    padding: 5px 0;
+    display: none;             /* Hidden by default */
+    background-color: #1a1a1a; /* Dark Gray background for list */
+    padding: 10px 0;
+    width: 100%;
+    
+    /* Borders to match the top */
+    border: 3px solid #333;
+    border-top: none;          /* Remove top border to merge with line */
     border-radius: 0 0 8px 8px;
-    width: 100%;               
+    box-sizing: border-box;    /* Ensures padding doesn't break width */
+}
+
+/* Class to show the menu (toggled via JS) */
+.show {
+    display: block;
 }
 
 /* Vertical links */
 .dropdown-content a {
     display: block;
-    width: calc(100% - 10px);  /* perfectly centered inside the dropdown */
+    width: 85%;                /* Centered inside the dropdown */
     margin: 5px auto;        
-    padding: 6px 0;
-    color: white;
-    background-color: #333;
+    padding: 8px 0;
+    color: #d4ac0d;            /* Yellow text */
+    background-color: #333;    /* Dark gray button background */
     text-decoration: none;
     text-align: center;      
     border-radius: 4px;
+    transition: background 0.3s;
 }
 
 .dropdown-content a:hover {
-    background-color: #555;
+    background-color: #555;    /* Lighter gray on hover */
+    color: white;
 }
