@@ -12,7 +12,7 @@ body {
     background-color: black;
     margin: 0;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: FranklinGothicCondensed, sans-serif;
 }
 
 /* Dropdown container */
@@ -25,7 +25,7 @@ body {
 /* Clickable header (The Dark Yellow Box) */
 .dropdown-header {
     background-color: #d4ac0d; /* Dark Yellow */
-    color: #1a1a1a;            /* Dark Text (better contrast on yellow) */
+    color: #FFFFFF;            /* white */
     padding: 12px;
     font-size: 16px;
     font-weight: bold;
@@ -34,7 +34,7 @@ body {
     
     /* Dark Gray Borders */
     border: 3px solid #333;    
-    border-bottom: none;       /* Remove bottom border to merge with line */
+    border-bottom: none;       
     border-radius: 8px 8px 0 0; /* Rounded top corners only */
 }
 
@@ -45,8 +45,8 @@ body {
 /* The Line (Separator) */
 .small-bar {
     width: 100%;               
-    height: 4px;               /* Visible thickness */
-    background-color: #333;    /* Dark Gray Line */
+    height: 4px;               
+    background-color: #808080;    /* Gray Line */
     display: block;
     margin: 0;
     
@@ -54,7 +54,7 @@ body {
     box-sizing: border-box; 
 }
 
-/* Dropdown content (The list below the line) */
+/* Dropdown content */
 .dropdown-content {
     display: none;             /* Hidden by default */
     background-color: #1a1a1a; /* Dark Gray background for list */
@@ -68,7 +68,7 @@ body {
     box-sizing: border-box;    /* Ensures padding doesn't break width */
 }
 
-/* Class to show the menu (toggled via JS) */
+/* Class to show the menu */
 .show {
     display: block;
 }
@@ -80,7 +80,7 @@ body {
     margin: 5px auto;        
     padding: 8px 0;
     color: #d4ac0d;            /* Yellow text */
-    background-color: #333;    /* Dark gray button background */
+    background-color: #808080;    /* gray button background */
     text-decoration: none;
     text-align: center;      
     border-radius: 4px;
