@@ -36,32 +36,28 @@ body {
 /* Small horizontal line under header */
 .small-bar {
     width: 100%;
-    background-color: #cccccc; /* light gray */
+    background-color: #cccccc; 
     padding: 5px;
-    margin-top: 0;
+    display: block;
 }
 
 /* Dropdown content  */
 .dropdown-content {
-    display: none; /* hidden by default */
-    position: absolute; /* allow overlapping the line */
-    top: 12px; /* move slightly to overlap the line */
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a; /* dark gray above the line*/
-    padding: 5px 0;
+    display: none;
+    background-color: #1a1a1a; /* dark gray space */
     border-radius: 0 0 8px 8px;
-    z-index: 10;
+    padding: 5px 0;
 }
 
 /* Links in vertical layout */
 .dropdown-content a {
     display: block;
     padding: 6px 10px;
-    margin: 0;
+    color: white;
+    background-color: #333; /* darker gray */
     text-decoration: none;
-    color: white; /* white text */
-    background-color: #333333; /* slightly lighter dark gray */
+    text-align: center;     /* center text */
+    margin: 4px;
     border-radius: 4px;
 }
 
