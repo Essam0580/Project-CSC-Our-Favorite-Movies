@@ -15,6 +15,14 @@ h1{
     text-align: center;
     font-family: Stardom;   
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Stardom, sans-serif;
+}
+
 
 .earn{
   background-color: color-mix(in hsl, #ffcc00 50%, #222222 50%);
