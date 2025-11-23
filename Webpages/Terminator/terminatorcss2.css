@@ -1,3 +1,89 @@
+@font-face {
+  font-family: Asimovian;
+  src: url("../../Fonts/Asimovian-Regular.woff2");
+}
+@font-face {
+  font-family: Stardom;
+  src: url("../../Fonts/Stardom-Regular.ttf");
+}
+@font-face {
+  font-family: Playfair;
+  src: url("../../Fonts/PlayfairDisplay-Regular[1].ttf");
+}
+
+h1{
+    text-align: center;
+    font-family: Stardom;   
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: Stardom, sans-serif;
+}
+
+
+.earn{
+  background-color: color-mix(in hsl, #ffcc00 50%, #222222 50%);
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.center{
+  text-align: center !important;
+  font-family: Asimovian !important;
+  background-color: color-mix(in hsl, #ffcc00 50%, #222222 50%);
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.sources{
+  text-align: center;
+  font-family: Stardom;
+  background-color: blue;
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.photobox {
+  width: 100%;          
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+  background-color: navy;
+}
+
+.t2 {
+  background: #101011;
+  font-size: medium;
+  padding: 24px 48px;   
+  border: 2px solid ;
+  font-family: Asimovian, sans-serif;
+  display: block;      
+  margin: 40px auto;    
+  transition: all 0.3s ease;
+        
+}
+
+.t2:hover {
+  background: #ff0000;
+  color: #000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
