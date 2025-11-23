@@ -3,9 +3,10 @@
     src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
 }
 
-    {
+body {
     font-family: "FranklinGothicCondensed", sans-serif;
-    }
+}
+
 /* Body background */
 body {
     background-color: #FFFFFF;
