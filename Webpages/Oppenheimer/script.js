@@ -1,4 +1,8 @@
 function toggleDropdown() {
     const list = document.getElementById("websiteList");
-    list.style.display = list.style.display === "block" ? "none" : "block";
+    if (list.style.display === "block") {
+        list.style.display = "none";
+    } else {
+        list.style.display = "block";
+    }
 }
