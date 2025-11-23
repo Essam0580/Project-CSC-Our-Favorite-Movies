@@ -1,6 +1,6 @@
 @font-face {
     font-family: "FranklinGothicCondensed";
-    src: url("Webpages/Oppenheimer/Fonts/Franklin Gothic Condensed.otf") format("opentype");
+    src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
 }
 
 * {
@@ -17,55 +17,53 @@ body {
 
 /* Dropdown container */
 .dropdown {
-    width: 120px; /* less wide */
-    border-radius: 8px; 
-    margin: 20px 0;
-    position: relative; /* for dropdown content to overlap line */
+    width: 120px;         /* keeps everything at this width */
+    position: relative;
+    margin-left: 20px;     /* keep it on the left */
 }
 
-/* The clickable top box */
+/* Clickable header */
 .dropdown-header {
     background-color: #d6d6a0; 
     color: white;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 8px 8px 0 0; /* round top corners */
+    border-radius: 8px 8px 0 0;
+    text-align: center;        /*  Fix text centering */
 }
 
-/* Small horizontal line under header */
+/* Small horizontal line UNDER header */
 .small-bar {
-    width: 100%;
-    background-color: #cccccc; /* light gray */
-    padding: 5px;
-    margin-top: 0;
+    width: 100%;               /* same width as dropdown (120px) */
+    height: 3px;               /* Made correctly thin */
+    background-color: #cccccc;
+    display: block;
+    margin: 0;                 /* no space above/below */
 }
 
-/* Dropdown content  */
+/* Dropdown content */
 .dropdown-content {
-    display: none; /* hidden by default */
-    position: absolute; /* allow overlapping the line */
-    top: 12px; /* move slightly to overlap the line */
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a; /* dark gray above the line*/
+    display: none;
+    background-color: #1a1a1a;
     padding: 5px 0;
     border-radius: 0 0 8px 8px;
-    z-index: 10;
+    width: 100%;               
 }
 
-/* Links in vertical layout */
+/* Vertical links */
 .dropdown-content a {
     display: block;
-    padding: 6px 10px;
-    margin: 0;
+    width: calc(100% - 10px);  /* perfectly centered inside the dropdown */
+    margin: 5px auto;        
+    padding: 6px 0;
+    color: white;
+    background-color: #333;
     text-decoration: none;
-    color: white; /* white text */
-    background-color: #333333; /* slightly lighter dark gray */
+    text-align: center;      
     border-radius: 4px;
 }
 
 .dropdown-content a:hover {
-    background-color: #555555; /* hover effect */
+    background-color: #555;
 }
-

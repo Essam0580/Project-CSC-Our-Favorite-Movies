@@ -259,6 +259,7 @@ html, body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    min-height: 1089px;
     overflow: hidden;
     position: relative;
     flex-direction: column;
@@ -289,7 +290,7 @@ html, body{
     width: calc(100vw - 370px);
     height: calc(100vw/(1920/800));
     left: 370px;
-    top: 88vh;
+    top: 88%;
     white-space: normal;
     z-index: 995;
 }
