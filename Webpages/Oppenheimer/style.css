@@ -144,8 +144,8 @@ section img {
 #Page2 .Movie_info1,
 #Page2 .Movie_info2 {
     flex: 1;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 200px;
+    max-width: 300px;
 }
 
 #Page2 img {
@@ -211,9 +211,10 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;   /* normal flow */
-    text-align: left;     /* align left */
-    margin: 20px 0 50px 20px; /* add some space below sections */
+    position: relative;      /* stays in normal flow */
+    text-align: left;        /* left-align contents */
+    margin: 20px 0 50px 0;   /* top 20px, bottom 50px, left 0 */
+    padding-left: 20px;      /* add some spacing from edge */
 }
 
 
