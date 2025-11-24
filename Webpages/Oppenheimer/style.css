@@ -133,20 +133,27 @@ section img {
 }
 
 /* ---------- FORCE FIX FOR SECTION 2 ---------- */
-#section2 {
+#Page2 {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 40px !important;
-    flex-wrap: nowrap !important;
 }
 
-#section2 img {
-    width: 320px !important;
-    height: auto !important;
-    margin: 0 !important;
+#Page2 .Movie_info1,
+#Page2 .Movie_info2 {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
 }
+
+#Page2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 
 /* ---------- TYPEWRITER ---------- */
 .typewriter p {
@@ -204,10 +211,10 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    margin-top: auto;
-    padding-bottom: 80px; /* push LOWER */
-    width: 100%;
+    position: relative;
+    margin: 50px auto 0 auto; /* space from sections */
     text-align: center;
+    width: 100%;
 }
 
 .bottom-link a {
@@ -224,3 +231,4 @@ section img {
 .bottom-link a:hover {
     background-color: #a67c1a;
 }
+
