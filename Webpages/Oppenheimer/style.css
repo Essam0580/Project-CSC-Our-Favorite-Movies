@@ -5,24 +5,24 @@
 
 body {
     font-family: "FranklinGothicCondensed", sans-serif;
-    background-color: #000;  /* black background */
+    background-color: #000;
     margin: 0;
     padding: 20px;
-    color: white; /* default text */
+    color: white;
     overflow-x: hidden;
 }
 
 /* ---------- MAIN TITLE ---------- */
 h1 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
+    font-size: 48px;
+    margin: 50px 0;
 }
 
 /* ---------- DROPDOWN ---------- */
 .dropdown {
     width: 150px;
-    position: fixed;   /* fixed so it doesn't move */
+    position: fixed;
     top: 20px;
     left: 20px;
     z-index: 1000;
@@ -69,26 +69,34 @@ h1 {
     background-color: #555;
 }
 
-/* ---------- SECTION LAYOUT ---------- */
+/* ---------- SECTIONS ---------- */
 section {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
     justify-content: center;
+    align-items: flex-start;
     gap: 30px;
-    margin: 100px 0;
-    opacity: 0;               /* start hidden */
-    transform: translateY(50px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    min-height: 100vh;
+    padding: 50px 20px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 1s ease, transform 1s ease;
+    background-color: #000;
 }
 
+/* visible section */
 section.visible {
     opacity: 1;
-    transform: translateY(0);
+    position: relative;
 }
 
+/* fade-out for leaving section */
 section.fade-out {
     opacity: 0;
+    position: absolute;
     transform: translateY(-50px);
 }
 
@@ -103,32 +111,32 @@ section:nth-child(even) h4, section:nth-child(even) h5, section:nth-child(even) 
     color: #FFD700; /* yellow */
 }
 
-/* ---------- IMAGES ---------- */
+/* ---------- IMAGE + TEXT LAYOUT ---------- */
 section img {
-    max-width: 300px;
+    max-width: 350px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
 }
 
-/* Movie info blocks */
 .Movie_info, .Movie_info1, .Movie_info2, .Movie_info3,
 .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7,
 .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11,
 .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15 {
-    max-width: 600px;
     flex: 1;
+    min-width: 300px;
 }
 
-/* ---------- SECTION 1 FIX ---------- */
-.title img, .title .Movie_info {
-    display: inline-block;
-    vertical-align: top;
-}
-
+/* SECTION 1 IMAGE FIX */
 .title {
-    flex-direction: row; /* image beside content */
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.title img {
+    margin-right: 30px;
 }
 
 /* ---------- TYPEWRITER ---------- */
@@ -136,19 +144,18 @@ section img {
     overflow: hidden;
     border-right: .15em solid orange;
     white-space: nowrap;
-    margin: 0 auto;
     letter-spacing: 0.05em;
     animation: typing 4s steps(50, end), blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange }
+    0%,100% { border-color: transparent; }
+    50% { border-color: orange; }
 }
 
 /* ---------- STAR RATING ---------- */
@@ -164,12 +171,11 @@ section img {
     100% { transform: scale(1); }
 }
 
-/* ---------- SECTION 16 GALLERY ---------- */
+/* ---------- GALLERY ---------- */
 .image-gallery {
     display: flex;
     gap: 10px;
-    overflow-y: auto;
-    max-height: 200px;
+    overflow-x: auto;
     padding: 10px;
 }
 
@@ -179,6 +185,12 @@ section img {
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px gold;
 }
 
 /* ---------- BOTTOM LINK ---------- */
