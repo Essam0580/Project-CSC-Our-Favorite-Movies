@@ -18,48 +18,42 @@ typewriterSections.forEach(section => {
 const sections = document.querySelectorAll("section");
 let currentIndex = 0;
 
+// Initialize: show only first section
+sections.forEach((sec, i) => {
+	sec.style.position = "absolute";
+	sec.style.top = "0";
+	sec.style.left = "0";
+	sec.style.width = "100%";
+	sec.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+	sec.style.opacity = i === 0 ? "1" : "0";
+	sec.style.zIndex = i === 0 ? "5" : "1";
+});
+
+// Show section function
 function showSection(index) {
 	sections.forEach((sec, i) => {
 		if (i === index) {
-			sec.classList.add("visible");
-			sec.style.position = 'fixed';
-			sec.style.top = '0';
-			sec.style.left = '0';
-			sec.style.width = '100%';
-			sec.style.zIndex = '5';
+			sec.style.opacity = "1";
+			sec.style.transform = "translateY(0)";
+			sec.style.zIndex = "5";
 		} else {
-			sec.classList.remove("visible");
-			sec.style.position = (i === sections.length - 1) ? 'relative' : 'fixed';
-			sec.style.top = '0';
-			sec.style.left = '0';
-			sec.style.width = '100%';
-			sec.style.zIndex = '1';
+			sec.style.opacity = "0";
+			sec.style.transform = "translateY(50px)";
+			sec.style.zIndex = "1";
 		}
 	});
 }
 
-// Show first section
-showSection(0);
-
 // Handle scroll
-let scrolling = false;
-window.addEventListener('scroll', () => {
-	if (scrolling) return;
-	scrolling = true;
-
+window.addEventListener("scroll", () => {
 	const scrollPos = window.scrollY;
-	const step = window.innerHeight * 0.8;
-	const newIndex = Math.min(
-		Math.floor(scrollPos / step),
-		sections.length - 1
-	);
+	const step = window.innerHeight * 0.8; // how much scroll to switch
+	const newIndex = Math.min(Math.floor(scrollPos / step), sections.length - 1);
 
 	if (newIndex !== currentIndex) {
 		currentIndex = newIndex;
 		showSection(currentIndex);
 	}
-
-	setTimeout(() => scrolling = false, 100);
 });
 
 // Make body tall enough to scroll through all sections
