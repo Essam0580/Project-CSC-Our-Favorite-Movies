@@ -216,9 +216,12 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative; /* normal flow */
-    margin: 50px 0 50px 20px; /* spacing below sections */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
 }
+
 
 .bottom-link a {
     display: inline-block;
@@ -229,9 +232,10 @@ section img {
     border-radius: 8px;
     font-weight: bold;
     transition: background 0.3s;
-    cursor: pointer; /* ensure it’s clickable */
+    cursor: pointer;
 }
 
 .bottom-link a:hover {
     background-color: #a67c1a;
 }
+
