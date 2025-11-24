@@ -77,13 +77,12 @@ section {
     align-items: center;
     gap: 40px;
 
-    position: relative; /* changed from absolute */
     width: 100%;
     min-height: 100vh;
 
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s ease;
-    pointer-events: none; /* prevents interaction when hidden */
+    pointer-events: none;
 }
 
 section.visible {
@@ -98,6 +97,7 @@ section.fade-out {
     transform: translateY(-50px);
     z-index: 1;
 }
+
 
 /* ---------- UNIVERSAL IMAGE FIX ---------- */
 section img {
@@ -152,12 +152,13 @@ section img {
 }
 
 /* Image inside container */
+/* Page 2 image */
 #Page2 .Movie_info1 img {
-    width: auto;       /* scale proportionally */
-    max-width: 200px;  /* smaller than before */
+    width: 200px; /* smaller */
     height: auto;
     border-radius: 5px;
 }
+
 
 /* ---------- TYPEWRITER ---------- */
 .typewriter p {
@@ -215,9 +216,8 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;   /* normal flow */
-    margin: 50px 0 50px 20px; /* some spacing from previous content */
-    z-index: 20;          /* ensure it’s above sections if needed */
+    position: relative; /* normal flow */
+    margin: 50px 0 50px 20px; /* spacing below sections */
 }
 
 .bottom-link a {
@@ -229,7 +229,7 @@ section img {
     border-radius: 8px;
     font-weight: bold;
     transition: background 0.3s;
-    cursor: pointer;       /* make sure it’s clickable */
+    cursor: pointer; /* ensure it’s clickable */
 }
 
 .bottom-link a:hover {
