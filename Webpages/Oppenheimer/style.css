@@ -191,7 +191,7 @@ section img {
     50% { border-color: orange; }
 }
 
-/* ---------- STAR RATING ---------- */
+/* ---------- STAR RATING ---------- */ 
 .star-rating {
     font-size: 24px;
     color: gold;
