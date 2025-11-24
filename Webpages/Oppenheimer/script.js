@@ -18,42 +18,36 @@ typewriterSections.forEach(section => {
 const sections = document.querySelectorAll("section");
 let currentIndex = 0;
 
-// Initialize: show only first section
+// Initialize: show first section
 sections.forEach((sec, i) => {
-	sec.style.position = "absolute";
-	sec.style.top = "0";
-	sec.style.left = "0";
-	sec.style.width = "100%";
-	sec.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-	sec.style.opacity = i === 0 ? "1" : "0";
-	sec.style.zIndex = i === 0 ? "5" : "1";
+	if(i === 0) sec.classList.add("visible");
 });
 
-// Show section function
+// Show a specific section
 function showSection(index) {
 	sections.forEach((sec, i) => {
-		if (i === index) {
-			sec.style.opacity = "1";
-			sec.style.transform = "translateY(0)";
-			sec.style.zIndex = "5";
-		} else {
-			sec.style.opacity = "0";
-			sec.style.transform = "translateY(50px)";
-			sec.style.zIndex = "1";
-		}
+		if(i === index) sec.classList.add("visible");
+		else sec.classList.remove("visible");
 	});
 }
 
 // Handle scroll
+let ticking = false;
 window.addEventListener("scroll", () => {
+	if(ticking) return;
+	ticking = true;
+
 	const scrollPos = window.scrollY;
-	const step = window.innerHeight * 0.8; // how much scroll to switch
+	const step = window.innerHeight; // scroll one full viewport per section
 	const newIndex = Math.min(Math.floor(scrollPos / step), sections.length - 1);
 
-	if (newIndex !== currentIndex) {
+	if(newIndex !== currentIndex) {
 		currentIndex = newIndex;
 		showSection(currentIndex);
 	}
+
+	// allow next scroll check
+	setTimeout(() => ticking = false, 100);
 });
 
 // Make body tall enough to scroll through all sections
