@@ -1,45 +1,40 @@
-// ---------- DROPDOWN ----------
+// Dropdown
 function toggleDropdown() {
     const list = document.getElementById("websiteList");
-    if (list.style.display === "block") {
-        list.style.display = "none";
-    } else {
-        list.style.display = "block";
-    }
+    list.style.display = (list.style.display === "block") ? "none" : "block";
 }
 
-// ---------- FADE-IN / FADE-OUT SECTIONS ON SCROLL ----------
+// Fade in/out section scrolling
 const sections = document.querySelectorAll("section");
-let lastVisibleIndex = -1;
+let currentIndex = 0;
 
-function handleScroll() {
-    sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight / 1.5 && rect.bottom > 50) {
-            if (lastVisibleIndex !== index) {
-                // fade out previous
-                if (lastVisibleIndex >= 0) {
-                    sections[lastVisibleIndex].classList.remove("visible");
-                    sections[lastVisibleIndex].classList.add("fade-out");
-                }
-                // fade in current
-                section.classList.remove("fade-out");
-                section.classList.add("visible");
-                lastVisibleIndex = index;
-            }
-        }
-    });
-}
+// Show first section initially
+sections[currentIndex].classList.add("visible");
 
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+        // scroll down
+        sections[currentIndex].classList.remove("visible");
+        sections[currentIndex].classList.add("fade-out");
+        currentIndex++;
+        sections[currentIndex].classList.remove("fade-out");
+        sections[currentIndex].classList.add("visible");
+    } else if (e.deltaY < 0 && currentIndex > 0) {
+        // scroll up
+        sections[currentIndex].classList.remove("visible");
+        sections[currentIndex].classList.add("fade-out");
+        currentIndex--;
+        sections[currentIndex].classList.remove("fade-out");
+        sections[currentIndex].classList.add("visible");
+    }
+});
 
-// ---------- TYPEWRITER EFFECT ----------
+// Typewriter for text sections
 const typewriterSections = document.querySelectorAll(".Movie_info2, .Movie_info3, .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7, .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11, .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15");
 
 typewriterSections.forEach(section => {
     const text = section.querySelector("h5, p");
-    if(text) {
+    if (text) {
         section.classList.add("typewriter");
     }
 });
-
