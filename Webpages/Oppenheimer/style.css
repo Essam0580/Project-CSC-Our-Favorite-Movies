@@ -211,11 +211,14 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;
-    margin: 50px auto 0 auto; /* space from sections */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    width: 100%;
+    z-index: 100;
 }
+
 
 .bottom-link a {
     display: inline-block;
