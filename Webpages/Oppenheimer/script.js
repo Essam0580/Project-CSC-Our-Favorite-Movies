@@ -4,7 +4,7 @@ function toggleDropdown() {
 	list.style.display = (list.style.display === "block") ? "none" : "block";
 }
 
-// ---------- TYPEWRITER ----------
+// Typewriter
 const typewriterSections = document.querySelectorAll(
 	".Movie_info2, .Movie_info3, .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7, .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11, .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15"
 );
@@ -14,22 +14,19 @@ typewriterSections.forEach(section => {
 	if (text) section.classList.add("typewriter");
 });
 
-// ---------- OPTIONAL FADE-IN ON SCROLL ----------
+// Fade-in sections on scroll
 const sections = document.querySelectorAll("section");
 
 function handleScroll() {
 	sections.forEach(section => {
 		const rect = section.getBoundingClientRect();
-		if (rect.top < window.innerHeight * 0.8) {
+		if (rect.top < window.innerHeight * 0.85) {
 			section.classList.add("visible");
 			section.classList.remove("fade-out");
-		} else {
-			section.classList.remove("visible");
-			section.classList.add("fade-out");
 		}
 	});
 }
 
-// Trigger on scroll and on page load
+// Trigger on scroll and page load
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("load", handleScroll);
