@@ -122,7 +122,6 @@ html, body{
 }
 
 .Name{
-  bottom: 60px;
   top: 50%;
   position: relative;       
   flex: 1 1 20%;
