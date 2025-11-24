@@ -210,8 +210,6 @@ section img {
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
     position: relative;
-    text-align: left; /* align the button to the left */
-    margin: 20px 0 50px 20px; /* optional spacing */
 }
 
 .bottom-link a {
