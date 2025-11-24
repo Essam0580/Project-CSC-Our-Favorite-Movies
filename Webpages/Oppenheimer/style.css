@@ -100,21 +100,30 @@ p, h5, h4 {
 }
 
 /* ---------- SECTIONS ---------- */
+/* ---------- SECTIONS ---------- */
 section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
 
-    width: 100%;
-    min-height: 100vh;
+	width: 100%;
+	min-height: 100vh;
 
-    opacity: 1; /* visible by default */
-    transform: translateY(0); /* no jump on scroll */
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    pointer-events: auto;
+	opacity: 0;
+	transform: translateY(50px); /* start slightly down */
+	transition: opacity 0.8s ease, transform 0.8s ease;
+	pointer-events: auto; /* allow scroll */
+	position: relative;    /* ensure normal flow */
 }
+
+/* visible fade-in */
+section.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
 
 /* ---------- UNIVERSAL IMAGE FIX ---------- */
 section img {
