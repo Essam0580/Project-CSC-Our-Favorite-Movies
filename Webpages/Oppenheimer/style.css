@@ -20,35 +20,6 @@ h1 {
     margin: 50px 0;
 }
 
-/* Force paragraphs and long text to wrap */
-p, h5, h4 {
-    max-width: 600px;
-    word-wrap: break-word;
-    line-height: 1.6;
-}
-
-/* Make Movie_info containers stack text vertically */
-.Movie_info,
-.Movie_info1,
-.Movie_info2,
-.Movie_info3,
-.Movie_info4,
-.Movie_info5,
-.Movie_info6,
-.Movie_info7,
-.Movie_info8,
-.Movie_info9,
-.Movie_info10,
-.Movie_info11,
-.Movie_info12,
-.Movie_info13,
-.Movie_info14,
-.Movie_info15 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 /* ---------- DROPDOWN ---------- */
 .dropdown {
     width: 150px;
