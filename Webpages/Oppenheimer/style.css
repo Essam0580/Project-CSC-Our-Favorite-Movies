@@ -133,6 +133,7 @@ section img {
 }
 
 /* ---------- FORCE FIX FOR SECTION 2 ---------- */
+/* Page 2 container layout */
 #Page2 {
     display: flex !important;
     flex-direction: row !important;
@@ -141,13 +142,21 @@ section img {
     gap: 40px !important;
 }
 
-#Page2 .Movie_info2 {
-    max-width: 250px;
+/* Left side image container */
+#Page2 .Movie_info1 {
+    max-width: 250px;  /* limit image container */
+    flex: 1;
 }
 
+/* Right side text container */
+#Page2 .Movie_info2 {
+    max-width: 250px;
+    flex: 1;
+}
 
-#Page2 img {
-    width: 100%;
+/* Image inside container */
+#Page2 .Movie_info1 img {
+    width: 100%;   /* fills its container */
     height: auto;
     border-radius: 5px;
 }
