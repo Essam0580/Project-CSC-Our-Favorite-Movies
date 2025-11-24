@@ -4,48 +4,71 @@ function toggleDropdown() {
     list.style.display = (list.style.display === "block") ? "none" : "block";
 }
 
-// SECTIONS SCROLL ANIMATION
-const sections = document.querySelectorAll("section");
-let currentIndex = 0;
-let scrolling = false;
 
-// Show first section
-sections[currentIndex].classList.add("visible");
+// FULL PAGE SECTION SCROLL
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll("section");
+    let currentIndex = 0;
+    let isScrolling = false;
 
-// Scroll handler with threshold
-window.addEventListener("wheel", (e) => {
-    if (scrolling) return;
-    if (e.deltaY > 50 && currentIndex < sections.length - 1) {
-        scrolling = true;
-        sections[currentIndex].classList.remove("visible");
-        sections[currentIndex].classList.add("fade-out");
+    // Show first section
+    sections.forEach((sec, i) => {
+        sec.style.position = "fixed";
+        sec.style.top = "0";
+        sec.style.left = "0";
+        sec.style.width = "100%";
+        sec.style.opacity = i === 0 ? "1" : "0";
+        sec.style.zIndex = i === 0 ? "10" : "1";
+    });
 
-        currentIndex++;
-        sections[currentIndex].classList.remove("fade-out");
-        sections[currentIndex].classList.add("visible");
-
-        setTimeout(() => { scrolling = false; }, 1200);
-    } else if (e.deltaY < -50 && currentIndex > 0) {
-        scrolling = true;
-        sections[currentIndex].classList.remove("visible");
-        sections[currentIndex].classList.add("fade-out");
-
-        currentIndex--;
-        sections[currentIndex].classList.remove("fade-out");
-        sections[currentIndex].classList.add("visible");
-
-        setTimeout(() => { scrolling = false; }, 1200);
+    function showSection(index) {
+        sections.forEach((sec, i) => {
+            if (i === index) {
+                sec.style.opacity = "1";
+                sec.style.zIndex = "10";
+            } else {
+                sec.style.opacity = "0";
+                sec.style.zIndex = "1";
+            }
+        });
     }
+
+    // Scroll handler
+    window.addEventListener("wheel", (e) => {
+        if (isScrolling) return;
+
+        if (e.deltaY > 50 && currentIndex < sections.length - 1) {
+            isScrolling = true;
+            currentIndex++;
+            showSection(currentIndex);
+        } else if (e.deltaY < -50 && currentIndex > 0) {
+            isScrolling = true;
+            currentIndex--;
+            showSection(currentIndex);
+        }
+
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1200);
+    });
+
+    // Make sure body is tall enough for scrolling
+    document.body.style.height = `${sections.length * window.innerHeight}px`;
+
+    
+    // TYPEWRITER ANIMATION
+    const typewriterSections = document.querySelectorAll(
+        ".Movie_info2, .Movie_info3, .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7, .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11, .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15"
+    );
+
+    typewriterSections.forEach(section => {
+        const text = section.querySelector("h5, p");
+        if (text) {
+            section.classList.add("typewriter");
+        }
+    });
 });
 
-
-// TYPEWRITER
-const typewriterSections = document.querySelectorAll(
-    ".Movie_info2, .Movie_info3, .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7, .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11, .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15"
-);
-
-typewriterSections.forEach(section => {
-    const text = section.querySelector("h5, p");
     if (text) {
         section.classList.add("typewriter");
     }
