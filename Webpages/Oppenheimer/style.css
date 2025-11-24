@@ -10,6 +10,7 @@ body {
     padding: 20px;
     color: white;
     overflow-x: hidden;
+    overflow-y: auto; /* allow vertical scroll */
 }
 
 /* ---------- MAIN TITLE ---------- */
@@ -17,6 +18,35 @@ h1 {
     text-align: center;
     font-size: 48px;
     margin: 50px 0;
+}
+
+/* Force paragraphs and long text to wrap */
+p, h5, h4 {
+    max-width: 600px;
+    word-wrap: break-word;
+    line-height: 1.6;
+}
+
+/* Make Movie_info containers stack text vertically */
+.Movie_info,
+.Movie_info1,
+.Movie_info2,
+.Movie_info3,
+.Movie_info4,
+.Movie_info5,
+.Movie_info6,
+.Movie_info7,
+.Movie_info8,
+.Movie_info9,
+.Movie_info10,
+.Movie_info11,
+.Movie_info12,
+.Movie_info13,
+.Movie_info14,
+.Movie_info15 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* ---------- DROPDOWN ---------- */
@@ -80,24 +110,11 @@ section {
     width: 100%;
     min-height: 100vh;
 
-    opacity: 0;
+    opacity: 1; /* visible by default */
+    transform: translateY(0); /* no jump on scroll */
     transition: opacity 0.8s ease, transform 0.8s ease;
-    pointer-events: none;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-    z-index: 10;
     pointer-events: auto;
 }
-
-section.fade-out {
-    opacity: 0;
-    transform: translateY(-50px);
-    z-index: 1;
-}
-
 
 /* ---------- UNIVERSAL IMAGE FIX ---------- */
 section img {
@@ -139,26 +156,21 @@ section img {
     gap: 40px !important;
 }
 
-/* Left side image container */
 #Page2 .Movie_info1 {
     flex: 1;
-    max-width: 200px;  /* smaller container */
+    max-width: 200px;
 }
 
-/* Right side text container */
 #Page2 .Movie_info2 {
     flex: 1;
     max-width: 250px;
 }
 
-/* Image inside container */
-/* Page 2 image */
 #Page2 .Movie_info1 img {
-    width: 200px; /* smaller */
+    width: 200px;
     height: auto;
     border-radius: 5px;
 }
-
 
 /* ---------- TYPEWRITER ---------- */
 .typewriter p {
@@ -216,9 +228,9 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative; /* keep it in normal flow */
-    margin: 50px 20px;  /* spacing from top and left */
-    z-index: 100;       /* make sure it’s above sections if needed */
+    position: relative;
+    margin: 50px 20px;
+    z-index: 100;
 }
 
 .bottom-link a {
