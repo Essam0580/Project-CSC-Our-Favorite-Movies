@@ -149,9 +149,9 @@ section img {
 }
 
 #Page2 img {
-    width: 80%;
+    width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -212,8 +212,6 @@ section img {
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
     position: relative;      /* stays in normal flow */
-    text-align: center;        /* left-align contents */
-    margin: 20px 0 50px 0;   /* top 20px, bottom 50px, left 0 */
     
 }
 
