@@ -141,12 +141,10 @@ section img {
     gap: 40px !important;
 }
 
-#Page2 .Movie_info1,
-#Page2 .Movie_info2 {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
+#Page2 .Movie_info1 {
+    max-width: 250px;
 }
+
 
 #Page2 img {
     width: 100%;
@@ -211,11 +209,10 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;      /* stays in normal flow */
-    
+    position: relative;
+    margin: 20px 0 50px 20px;
+    text-align: left;
 }
-
-
 
 .bottom-link a {
     display: inline-block;
@@ -231,4 +228,3 @@ section img {
 .bottom-link a:hover {
     background-color: #a67c1a;
 }
-
