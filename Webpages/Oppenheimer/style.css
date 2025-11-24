@@ -218,8 +218,11 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;
+    position: relative;   /* normal flow */
+    text-align: left;     /* align left */
+    margin: 20px 0 50px 20px; /* add some space below sections */
 }
+
 
 .bottom-link a {
     display: inline-block;
