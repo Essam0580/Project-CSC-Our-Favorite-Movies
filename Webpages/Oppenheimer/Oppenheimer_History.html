@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
     <title>Oppenheimer Movie - History & Behind the Scenes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 
+    <!-- Dropdown Navigation -->
+    <div class="dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown()">
+            Pages
+        </div>
+        <div class="small-bar"></div>
+        <div class="dropdown-content" id="websiteList">
+            <a href="../../index.html">Home</a>
+            <a href="../../aboutpage.html">About</a>
+            <a href="../Whiplash/Wepage_1.html">Whiplash</a>
+            <a href="../Terminator/terminator1.html">The Terminator</a>
+            <a href="../NightCrawler/nightcrawler1.html">NightCrawler</a>
+            <a href="../Oppenheimer/Oppenheimer.html">Oppenheimer</a>
+            <a href="../TheGodFather/thegodfather1.html">The Godfather</a>
+        </div>
+    </div>
+
+    <h1>Oppenheimer Movie: History & Behind the Scenes</h1>
+
     <!-- HISTORY SECTION -->
     <section id="history">
         <div class="text-block">
-            <h1>History Behind Oppenheimer Movie</h1>
+            <h1>History Behind the Movie</h1>
             <h3>The Story of Creation</h3>
-            <p>The movie "Oppenheimer" was crafted to tell the story of the brilliant physicist J. Robert Oppenheimer, who played a key role in the Manhattan Project during World War II. The production aimed to portray both the historical and moral complexities of creating the atomic bomb.</p>
+            <p>The movie "Oppenheimer" was created to explore the life of J. Robert Oppenheimer, 
+            the father of the atomic bomb. It highlights the historical context, the Manhattan Project, 
+            and the moral dilemmas faced by scientists during WWII.</p>
         </div>
         <div class="images">
-            <img src="images/history1.jpg" alt="History Image 1">
-            <img src="images/history2.jpg" alt="History Image 2">
+            <img src="images/history1.jpg" alt="Historical Scene 1">
+            <img src="images/history2.jpg" alt="Historical Scene 2">
         </div>
     </section>
 
@@ -25,22 +46,33 @@
     <section id="behind-scenes">
         <div class="text-block">
             <h1>Behind the Scenes</h1>
-            <h3>Making of the Movie</h3>
-            <p>The production involved meticulous set designs, historical research, and careful attention to visual effects to capture the intensity and realism of the atomic era. Here are some glimpses behind the camera.</p>
+            <h3>Making of Oppenheimer</h3>
+            <p>The film involved detailed set design, historical research, and immersive cinematography. 
+            Here are some exclusive behind-the-scenes images:</p>
         </div>
-        <ul class="scene-images">
-            <li><img src="images/scene1.jpg" alt="Scene 1"></li>
-            <li><img src="images/scene2.jpg" alt="Scene 2"></li>
-            <li><img src="images/scene3.jpg" alt="Scene 3"></li>
-            <li><img src="images/scene4.jpg" alt="Scene 4"></li>
-        </ul>
+        <div class="images">
+            <img src="images/scene1.jpg" alt="Scene 1">
+            <img src="images/scene2.jpg" alt="Scene 2">
+            <img src="images/scene3.jpg" alt="Scene 3">
+            <img src="images/scene4.jpg" alt="Scene 4">
+        </div>
     </section>
 
     <!-- THANK YOU SECTION -->
     <section id="thank-you">
         <h1>Thank You for Visiting!</h1>
-        <a href="" target="_blank">Our github </a>
+        <p>For more movie insights, visit <a href="https://www.imdb.com" target="_blank">IMDB</a></p>
     </section>
 
+    <script>
+        function toggleDropdown() {
+            const content = document.getElementById("websiteList");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
