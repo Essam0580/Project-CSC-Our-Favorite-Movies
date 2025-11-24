@@ -3,24 +3,31 @@
     src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
 }
 
-    {
-    font-family: "FranklinGothicCondensed", sans-serif;
-    }
-/* Body background */
 body {
-    background-color: #FFFFFF;
+    font-family: "FranklinGothicCondensed", sans-serif;
+    background-color: #000;
     margin: 0;
     padding: 20px;
+    color: white;
+    overflow-x: hidden;
 }
 
-/* Dropdown container */
+/* ---------- MAIN TITLE ---------- */
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin: 50px 0;
+}
+
+/* ---------- DROPDOWN ---------- */
 .dropdown {
-    width: 120px;         /* keeps everything at this width */
-    position: relative;
-    margin-left: 20px;     /* keep it on the left */
+    width: 150px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
 }
 
-/* Clickable header */
 .dropdown-header {
     background-color: #bd9722; 
     color: white;
@@ -28,40 +35,181 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 8px 8px 0 0;
-    text-align: center;        /*  Fix text centering */
+    text-align: center;
 }
 
-/* Small horizontal line UNDER header */
 .small-bar {
-    width: 100%;               /* same width as dropdown  */
-    height: 3px;               /* Made correctly thin */
+    width: 100%;
+    height: 3px;
     background-color: #cccccc;
-    display: block;
-    margin: 0;                 /* no space above/below */
+    margin: 0;
 }
 
-/* Dropdown content */
 .dropdown-content {
     display: none;
     background-color: #1a1a1a;
     padding: 5px 0;
     border-radius: 0 0 8px 8px;
-    width: 100%;               /* matches dropdown width */
+    width: 100%;
 }
 
-/* Vertical links */
 .dropdown-content a {
     display: block;
-    width: calc(100% - 10px);  /* perfectly centered inside the dropdown */
-    margin: 5px auto;          /*  auto = centers the links */
+    width: calc(100% - 10px);
+    margin: 5px auto;
     padding: 6px 0;
     color: white;
     background-color: #333;
     text-decoration: none;
-    text-align: center;        /* centers text */
+    text-align: center;
     border-radius: 4px;
 }
 
 .dropdown-content a:hover {
     background-color: #555;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    min-height: 100vh;
+    padding: 50px 20px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 1s ease, transform 1s ease;
+    background-color: #000;
+}
+
+/* visible section */
+section.visible {
+    opacity: 1;
+    position: relative;
+}
+
+/* fade-out for leaving section */
+section.fade-out {
+    opacity: 0;
+    position: absolute;
+    transform: translateY(-50px);
+}
+
+/* Alternate text color */
+section:nth-child(odd) h1, section:nth-child(odd) h2, section:nth-child(odd) h3,
+section:nth-child(odd) h4, section:nth-child(odd) h5, section:nth-child(odd) p {
+    color: white;
+}
+
+section:nth-child(even) h1, section:nth-child(even) h2, section:nth-child(even) h3,
+section:nth-child(even) h4, section:nth-child(even) h5, section:nth-child(even) p {
+    color: #FFD700; /* yellow */
+}
+
+/* ---------- IMAGE + TEXT LAYOUT ---------- */
+section img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.Movie_info, .Movie_info1, .Movie_info2, .Movie_info3,
+.Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7,
+.Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11,
+.Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15 {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* SECTION 1 IMAGE FIX */
+.title {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.title img {
+    margin-right: 30px;
+}
+
+/* ---------- TYPEWRITER ---------- */
+.typewriter p {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    animation: typing 4s steps(50, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    0%,100% { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+/* ---------- STAR RATING ---------- */
+.star-rating {
+    font-size: 24px;
+    color: gold;
+    animation: stars 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes stars {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ---------- GALLERY ---------- */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.image-gallery img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px gold;
+}
+
+/* ---------- BOTTOM LINK ---------- */
+.bottom-link {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.bottom-link a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #bd9722;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.bottom-link a:hover {
+    background-color: #a67c1a;
 }
