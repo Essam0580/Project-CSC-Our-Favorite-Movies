@@ -71,6 +71,7 @@ h1 {
 }
 
 /* ---------- SECTIONS ---------- */
+/* Sections now absolutely stacked but JS handles which one is visible */
 section {
     display: flex;
     flex-direction: row;
@@ -79,13 +80,25 @@ section {
     gap: 40px;
 
     width: 100%;
-    min-height: 100vh;
+    height: 100vh; /* full viewport */
+    position: absolute; /* stack on top of each other */
+    top: 0;
+    left: 0;
 
-    opacity: 1; /* visible by default */
-    transform: translateY(0); /* no jump on scroll */
+    opacity: 0; /* hidden by default */
+    transform: translateY(50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
     pointer-events: auto;
+    z-index: 1;
 }
+
+/* visible section */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 5;
+}
+
 
 /* ---------- UNIVERSAL IMAGE FIX ---------- */
 section img {
