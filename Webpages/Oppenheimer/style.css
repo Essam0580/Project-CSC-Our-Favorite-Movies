@@ -3,192 +3,61 @@
     src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
 }
 
-* {
-    box-sizing: border-box; /* Keeps padding from breaking layouts */
-}
-
 body {
     font-family: "FranklinGothicCondensed", sans-serif;
     background-color: #000;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     color: white;
-    overflow-x: hidden; /* Prevents horizontal scrollbar on the whole page */
+    overflow-x: hidden;
+    overflow-y: auto; /* allow vertical scroll */
 }
 
-/* =========================================
-   2. TYPOGRAPHY & TEXT WRAPPING
-   ========================================= */
+/* ---------- MAIN TITLE ---------- */
 h1 {
     text-align: center;
     font-size: 48px;
-    margin: 50px 20px;
-    line-height: 1.2;
+    margin: 50px 0;
 }
 
-h2, h3, h4, h5, h6 {
-    margin: 10px 0;
-    line-height: 1.4;
-    width: 100%;
-}
-
-/* FORCE FIX: This stops text from staying in one line */
-p {
-    display: block;
-    width: 100%;
+/* Force paragraphs and long text to wrap */
+p, h5, h4 {
     max-width: 600px;
-    white-space: normal !important; /* CRITICAL FIX */
     word-wrap: break-word;
     line-height: 1.6;
-    margin: 10px 0;
-    font-size: 18px;
 }
 
-/* =========================================
-   3. MAIN SECTION LAYOUT (Desktop)
-   ========================================= */
-section {
-    display: flex;
-    flex-direction: row; /* Side-by-Side Images and Text */
-    justify-content: center;
-    align-items: center; /* Vertically center */
-    gap: 50px;
-    width: 100%;
-    min-height: 90vh; /* Takes up most of the screen height */
-    padding: 40px;
-    position: relative;
-}
-
-/* Standard Images (Posters/Characters) */
-section img {
-    width: 300px; 
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    flex-shrink: 0; /* Prevents image from getting squished */
-}
-
-/* Video Containers */
-.Plot-video iframe {
-    width: 560px; 
-    height: 315px;
-    max-width: 100%;
-}
-
-/* =========================================
-   4. MOVIE INFO CONTAINERS
-   ========================================= */
-/* Targets Movie_info1, Movie_info2, etc automatically */
-div[class*="Movie_info"] {
+/* Make Movie_info containers stack text vertically */
+.Movie_info,
+.Movie_info1,
+.Movie_info2,
+.Movie_info3,
+.Movie_info4,
+.Movie_info5,
+.Movie_info6,
+.Movie_info7,
+.Movie_info8,
+.Movie_info9,
+.Movie_info10,
+.Movie_info11,
+.Movie_info12,
+.Movie_info13,
+.Movie_info14,
+.Movie_info15 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; /* Aligns text to the left */
-    max-width: 600px;
-    width: 100%;
+    gap: 10px;
 }
 
-/* =========================================
-   5. RESPONSIVE / STACKING (Mobile)
-   ========================================= */
-/* This runs on Phones and Tablets */
-@media screen and (max-width: 900px) {
-    section {
-        flex-direction: column; /* STACKS items vertically */
-        height: auto;           /* Removes fixed height */
-        min-height: auto;
-        padding: 60px 20px;
-        text-align: center;     /* Centers text */
-    }
-
-    div[class*="Movie_info"] {
-        align-items: center;    /* Centers text inside the box */
-    }
-
-    section img {
-        width: 100%;
-        max-width: 400px;       /* Limits image size on phone */
-        margin-bottom: 20px;
-    }
-
-    h1 { font-size: 32px; }
-}
-
-/* =========================================
-   6. SECTION 16: GALLERY FIX
-   ========================================= */
-/* Specific fix for the gallery section container */
-#Page16 {
-    flex-direction: column; /* Gallery title on top, images below */
-    height: auto;
-    min-height: auto;
-    padding-bottom: 0;
-}
-
-.image-gallery {
-    display: flex;
-    flex-wrap: wrap;       /* Allows images to wrap to next line */
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-    padding: 20px 0;
-}
-
-/* Override general section img rules for the gallery */
-.image-gallery img {
-    width: 150px !important;  /* Force fixed width */
-    height: 225px !important; /* Force fixed height */
-    object-fit: cover;
-    margin: 0;
-    transition: transform 0.3s ease;
-}
-
-.image-gallery img:hover {
-    transform: scale(1.1);
-    z-index: 10;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-}
-
-/* =========================================
-   7. BOTTOM LINK FIX
-   ========================================= */
-.bottom-link {
-    display: block; /* Ensures it takes up its own line */
-    width: 100%;
-    text-align: center;
-    padding: 80px 0 100px 0; /* Huge padding to force it down */
-    margin-top: 20px;
-    clear: both;
-    background-color: #000; /* Matches background */
-}
-
-.bottom-link a {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #bd9722;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.bottom-link a:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-/* =========================================
-   8. DROPDOWN (Extras)
-   ========================================= */
+/* ---------- DROPDOWN ---------- */
 .dropdown {
     width: 150px;
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 9999;
+    z-index: 1000;
 }
+
 .dropdown-header {
     background-color: #bd9722; 
     color: white;
@@ -198,20 +67,184 @@ div[class*="Movie_info"] {
     border-radius: 8px 8px 0 0;
     text-align: center;
 }
-.small-bar { width: 100%; height: 3px; background-color: #cccccc; margin: 0; }
+
+.small-bar {
+    width: 100%;
+    height: 3px;
+    background-color: #cccccc;
+    margin: 0;
+}
+
 .dropdown-content {
     display: none;
     background-color: #1a1a1a;
     padding: 5px 0;
     border-radius: 0 0 8px 8px;
+    width: 100%;
 }
+
 .dropdown-content a {
     display: block;
-    width: 100%;
-    padding: 10px 0;
+    width: calc(100% - 10px);
+    margin: 5px auto;
+    padding: 6px 0;
     color: white;
+    background-color: #333;
     text-decoration: none;
     text-align: center;
+    border-radius: 4px;
 }
-.dropdown-content a:hover { background-color: #333; }
-.star-rating { color: gold; font-size: 24px; }
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    width: 100%;
+    min-height: 100vh;
+
+    opacity: 1; /* visible by default */
+    transform: translateY(0); /* no jump on scroll */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: auto;
+}
+
+/* ---------- UNIVERSAL IMAGE FIX ---------- */
+section img {
+    width: 320px;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+/* ---------- UNIVERSAL TEXT CONTAINER ---------- */
+.Movie_info,
+.Movie_info1,
+.Movie_info2,
+.Movie_info3,
+.Movie_info4,
+.Movie_info5,
+.Movie_info6,
+.Movie_info7,
+.Movie_info8,
+.Movie_info9,
+.Movie_info10,
+.Movie_info11,
+.Movie_info12,
+.Movie_info13,
+.Movie_info14,
+.Movie_info15 {
+    max-width: 600px;
+    min-width: 300px;
+    flex: 1;
+}
+
+/* ---------- FORCE FIX FOR SECTION 2 ---------- */
+#Page2 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 40px !important;
+}
+
+#Page2 .Movie_info1 {
+    flex: 1;
+    max-width: 200px;
+}
+
+#Page2 .Movie_info2 {
+    flex: 1;
+    max-width: 250px;
+}
+
+#Page2 .Movie_info1 img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* ---------- TYPEWRITER ---------- */
+.typewriter p {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    animation: typing 4s steps(50, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    0%,100% { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+/* ---------- STAR RATING ---------- */
+.star-rating {
+    font-size: 24px;
+    color: gold;
+    animation: stars 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes stars {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ---------- GALLERY ---------- */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.image-gallery img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px gold;
+}
+
+/* ---------- BOTTOM LINK ---------- */
+.bottom-link {
+    position: relative;
+    margin: 50px 20px;
+    z-index: 100;
+}
+
+.bottom-link a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #bd9722;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.bottom-link a:hover {
+    background-color: #a67c1a;
+}
