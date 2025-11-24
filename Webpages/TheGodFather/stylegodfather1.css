@@ -27,8 +27,6 @@ body {
   color: #eee;
   line-height: 1.5;
 }
-
-.container {
 .container {
   width: calc(100% - 40px);
   max-width: var(--max-width);
