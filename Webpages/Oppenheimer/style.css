@@ -20,16 +20,19 @@ h1 {
     margin: 50px 0;
 }
 
-/* Force paragraphs and long text to wrap and stay stacked */
-p, h4, h5 {
-    max-width: 600px;        /* limits width so lines wrap */
-    width: 100%;             /* use full container width */
-    word-break: break-word;  /* break very long words */
-    white-space: normal;     /* ensure text wraps */
+/* Make all text anywhere follow Movie_info2 wrapping rules */
+p, h3, h4, h5, h6 {
+    display: block;          /* standard block behavior */
+    max-width: 600px;        /* same as Movie_info2 */
+    min-width: 0;            /* allow shrinking in flex containers */
+    width: 100%;             /* fill available space */
+    word-break: break-word;  /* break long words */
+    white-space: normal;     /* allow line breaks */
     line-height: 1.6;        /* spacing between lines */
+    margin: 5px 0;           /* spacing between elements */
 }
 
-/* Stack text vertically in Movie_info containers */
+/* Optional: make all Movie_info containers flexible */
 .Movie_info,
 .Movie_info1,
 .Movie_info2,
@@ -47,11 +50,12 @@ p, h4, h5 {
 .Movie_info14,
 .Movie_info15 {
     display: flex;
-    flex-direction: column; /* vertical stacking */
-    align-items: flex-start; /* align text to left */
-    gap: 10px;               /* spacing between elements */
-    width: 100%;             /* let container fill available space */
-    max-width: 600px;        /* optional: prevent too wide */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 1 0;  /* allow shrinking in flex rows */
+    max-width: 600px;
+    min-width: 300px;
 }
 
 /* ---------- DROPDOWN ---------- */
@@ -242,7 +246,7 @@ section img {
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
     position: relative;
-    margin: 50px 20px;
+    margin: 550px 20px;
     z-index: 100;
 }
 
