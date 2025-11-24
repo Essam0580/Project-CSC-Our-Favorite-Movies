@@ -14,19 +14,53 @@ typewriterSections.forEach(section => {
 	if (text) section.classList.add("typewriter");
 });
 
-// Fade-in sections on scroll
+// ---------- Scroll-triggered single-section view ----------
 const sections = document.querySelectorAll("section");
+let currentIndex = 0;
 
-function handleScroll() {
-	sections.forEach(section => {
-		const rect = section.getBoundingClientRect();
-		if (rect.top < window.innerHeight * 0.85) {
-			section.classList.add("visible");
-			section.classList.remove("fade-out");
+function showSection(index) {
+	sections.forEach((sec, i) => {
+		if (i === index) {
+			sec.classList.add("visible");
+			sec.style.position = 'fixed';
+			sec.style.top = '0';
+			sec.style.left = '0';
+			sec.style.width = '100%';
+			sec.style.zIndex = '5';
+		} else {
+			sec.classList.remove("visible");
+			sec.style.position = (i === sections.length - 1) ? 'relative' : 'fixed';
+			sec.style.top = '0';
+			sec.style.left = '0';
+			sec.style.width = '100%';
+			sec.style.zIndex = '1';
 		}
 	});
 }
 
-// Trigger on scroll and page load
-window.addEventListener("scroll", handleScroll);
-window.addEventListener("load", handleScroll);
+// Show first section
+showSection(0);
+
+// Handle scroll
+let scrolling = false;
+window.addEventListener('scroll', () => {
+	if (scrolling) return;
+	scrolling = true;
+
+	const scrollPos = window.scrollY;
+	const step = window.innerHeight * 0.8;
+	const newIndex = Math.min(
+		Math.floor(scrollPos / step),
+		sections.length - 1
+	);
+
+	if (newIndex !== currentIndex) {
+		currentIndex = newIndex;
+		showSection(currentIndex);
+	}
+
+	setTimeout(() => scrolling = false, 100);
+});
+
+// Make body tall enough to scroll through all sections
+document.body.style.height = `${sections.length * window.innerHeight}px`;
