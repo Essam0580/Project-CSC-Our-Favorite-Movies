@@ -215,9 +215,9 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;   /* stays in normal flow */
-    text-align: left;     /* align left */
-    margin: 20px 0 50px 20px; /* space below sections */
+    position: relative;   /* normal flow */
+    margin: 50px 0 50px 20px; /* some spacing from previous content */
+    z-index: 20;          /* ensure it’s above sections if needed */
 }
 
 .bottom-link a {
@@ -229,6 +229,7 @@ section img {
     border-radius: 8px;
     font-weight: bold;
     transition: background 0.3s;
+    cursor: pointer;       /* make sure it’s clickable */
 }
 
 .bottom-link a:hover {
