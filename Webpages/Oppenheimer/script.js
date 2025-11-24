@@ -5,20 +5,22 @@ function toggleDropdown() {
 }
 
 
-// FULL PAGE SECTION SCROLL
-document.addEventListener('DOMContentLoaded', () => {
+
+// SECTION FADE SCROLL SYSTEM
+document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     let currentIndex = 0;
     let isScrolling = false;
 
-    // Show first section
-    sections.forEach((sec, i) => {
+    // INITIAL SECTION SETUP
+    sections.forEach((sec, index) => {
         sec.style.position = "fixed";
         sec.style.top = "0";
         sec.style.left = "0";
         sec.style.width = "100%";
-        sec.style.opacity = i === 0 ? "1" : "0";
-        sec.style.zIndex = i === 0 ? "10" : "1";
+        sec.style.opacity = index === 0 ? "1" : "0";
+        sec.style.zIndex = index === 0 ? "10" : "1";
+        sec.style.transition = "opacity 1s ease";
     });
 
     function showSection(index) {
@@ -33,43 +35,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll handler
+    // SMOOTH SCROLLING — FIXED SPEED
     window.addEventListener("wheel", (e) => {
         if (isScrolling) return;
 
-        if (e.deltaY > 50 && currentIndex < sections.length - 1) {
-            isScrolling = true;
+        // Threshold to trigger fade
+        const threshold = 80;
+
+        if (e.deltaY > threshold && currentIndex < sections.length - 1) {
             currentIndex++;
-            showSection(currentIndex);
-        } else if (e.deltaY < -50 && currentIndex > 0) {
             isScrolling = true;
+            showSection(currentIndex);
+        } else if (e.deltaY < -threshold && currentIndex > 0) {
             currentIndex--;
+            isScrolling = true;
             showSection(currentIndex);
         }
 
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1200);
+        // delay between scrolls
+        setTimeout(() => { isScrolling = false; }, 1100);
     });
 
-    // Make sure body is tall enough for scrolling
+    // Artificial page height (makes scroll wheel work)
     document.body.style.height = `${sections.length * window.innerHeight}px`;
 
-    
-    // TYPEWRITER ANIMATION
-    const typewriterSections = document.querySelectorAll(
-        ".Movie_info2, .Movie_info3, .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7, .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11, .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15"
+
+
+    // TYPEWRITER 
+    const typewriterTargets = document.querySelectorAll(
+        ".Movie_info, .Movie_info1, .Movie_info2, .Movie_info3, .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7, .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11, .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15"
     );
 
-    typewriterSections.forEach(section => {
-        const text = section.querySelector("h5, p");
-        if (text) {
+    typewriterTargets.forEach(section => {
+        const textElement = section.querySelector("p, h5, h4, h3");
+        if (textElement) {
             section.classList.add("typewriter");
         }
     });
 });
 
-    if (text) {
-        section.classList.add("typewriter");
     }
 });
