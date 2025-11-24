@@ -1,35 +1,30 @@
+/* ============================= */
+/* FONT */
 @font-face { 
     font-family: "FranklinGothicCondensed";
     src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
 }
-
 body {
     font-family: "FranklinGothicCondensed", sans-serif;
     background-color: #000;
     margin: 0;
     padding: 20px;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden; /* prevent body scroll while sections animate */
 }
 
-/* ---------- MAIN TITLE ---------- */
-h1 {
-    text-align: center;
-    font-size: 48px;
-    margin: 50px 0;
-}
-
-/* ---------- DROPDOWN ---------- */
+/* ============================= */
+/* DROPDOWN */
 .dropdown {
-    width: 150px;
-    position: fixed;
+    width: 120px;
+    position: fixed; /* keep fixed */
     top: 20px;
     left: 20px;
     z-index: 1000;
 }
 
 .dropdown-header {
-    background-color: #bd9722; 
+    background-color: #bd9722;
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -42,6 +37,7 @@ h1 {
     width: 100%;
     height: 3px;
     background-color: #cccccc;
+    display: block;
     margin: 0;
 }
 
@@ -69,13 +65,14 @@ h1 {
     background-color: #555;
 }
 
-/* ---------- SECTIONS ---------- */
+/* ============================= */
+/* SECTIONS */
 section {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    align-items: center;
+    gap: 50px;
     min-height: 100vh;
     padding: 50px 20px;
     opacity: 0;
@@ -84,67 +81,42 @@ section {
     left: 0;
     width: 100%;
     transition: opacity 1s ease, transform 1s ease;
-    background-color: #000;
 }
 
-/* visible section */
 section.visible {
     opacity: 1;
-    position: relative;
+    z-index: 10;
 }
 
-/* fade-out for leaving section */
 section.fade-out {
     opacity: 0;
-    position: absolute;
-    transform: translateY(-50px);
+    z-index: 1;
 }
 
-/* Alternate text color */
-section:nth-child(odd) h1, section:nth-child(odd) h2, section:nth-child(odd) h3,
-section:nth-child(odd) h4, section:nth-child(odd) h5, section:nth-child(odd) p {
-    color: white;
-}
-
-section:nth-child(even) h1, section:nth-child(even) h2, section:nth-child(even) h3,
-section:nth-child(even) h4, section:nth-child(even) h5, section:nth-child(even) p {
-    color: #FFD700; /* yellow */
-}
-
-/* ---------- IMAGE + TEXT LAYOUT ---------- */
 section img {
-    max-width: 350px;
+    max-width: 40%;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.Movie_info, .Movie_info1, .Movie_info2, .Movie_info3,
+/* Make all Movie_info boxes scrollable if content too long */
+.Movie_info, .Movie_info1, .Movie_info2, .Movie_info3, 
 .Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7,
 .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11,
 .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15 {
     flex: 1;
     min-width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-/* SECTION 1 IMAGE FIX */
-.title {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-}
-
-.title img {
-    margin-right: 30px;
-}
-
-/* ---------- TYPEWRITER ---------- */
-.typewriter p {
+/* ============================= */
+/* TYPEWRITER */
+.typewriter p, .typewriter h5 {
     overflow: hidden;
     border-right: .15em solid orange;
     white-space: nowrap;
-    letter-spacing: 0.05em;
     animation: typing 4s steps(50, end), blink-caret .75s step-end infinite;
 }
 
@@ -154,62 +126,54 @@ section img {
 }
 
 @keyframes blink-caret {
-    0%,100% { border-color: transparent; }
+    0%, 100% { border-color: transparent; }
     50% { border-color: orange; }
 }
 
-/* ---------- STAR RATING ---------- */
+/* ============================= */
+/* STAR ANIMATION */
 .star-rating {
     font-size: 24px;
     color: gold;
-    animation: stars 1.5s ease-in-out infinite alternate;
+    animation: star-glow 1s infinite alternate;
+}
+@keyframes star-glow {
+    0% { text-shadow: 0 0 2px gold; }
+    100% { text-shadow: 0 0 15px gold; }
 }
 
-@keyframes stars {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-/* ---------- GALLERY ---------- */
+/* ============================= */
+/* SECTION 16 GALLERY */
 .image-gallery {
     display: flex;
     gap: 10px;
-    overflow-x: auto;
-    padding: 10px;
+    overflow-y: auto;
+    max-height: 300px;
 }
-
-.image-gallery img {
+.image-gallery a img {
     width: 150px;
-    height: 200px;
+    height: 220px;
+    border-radius: 10px;
     object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-gallery a img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px gold;
 }
 
-.image-gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px gold;
-}
-
-/* ---------- BOTTOM LINK ---------- */
+/* ============================= */
+/* BOTTOM LINK BOX */
 .bottom-link {
     text-align: center;
-    margin: 50px 0;
+    margin-top: 20px;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
 
 .bottom-link a {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #bd9722;
-    color: white;
+    color: gold;
     text-decoration: none;
-    border-radius: 8px;
     font-weight: bold;
-    transition: background 0.3s;
-}
-
-.bottom-link a:hover {
-    background-color: #a67c1a;
 }
