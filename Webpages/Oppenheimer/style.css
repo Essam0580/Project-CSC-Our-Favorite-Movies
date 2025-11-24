@@ -216,12 +216,10 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;
-    bottom: 20px;
-    left: 20px;
-    z-index: 100;
+    position: relative; /* keep it in normal flow */
+    margin: 50px 20px;  /* spacing from top and left */
+    z-index: 100;       /* make sure it’s above sections if needed */
 }
-
 
 .bottom-link a {
     display: inline-block;
@@ -238,4 +236,3 @@ section img {
 .bottom-link a:hover {
     background-color: #a67c1a;
 }
-
