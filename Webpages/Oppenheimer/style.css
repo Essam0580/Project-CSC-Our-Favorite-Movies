@@ -20,14 +20,16 @@ h1 {
     margin: 50px 0;
 }
 
-/* Force paragraphs and long text to wrap */
-p, h5, h4 {
-    max-width: 600px;
-    word-wrap: break-word;
-    line-height: 1.6;
+/* Force paragraphs and long text to wrap and stay stacked */
+p, h4, h5 {
+    max-width: 600px;        /* limits width so lines wrap */
+    width: 100%;             /* use full container width */
+    word-break: break-word;  /* break very long words */
+    white-space: normal;     /* ensure text wraps */
+    line-height: 1.6;        /* spacing between lines */
 }
 
-/* Make Movie_info containers stack text vertically */
+/* Stack text vertically in Movie_info containers */
 .Movie_info,
 .Movie_info1,
 .Movie_info2,
@@ -45,8 +47,11 @@ p, h5, h4 {
 .Movie_info14,
 .Movie_info15 {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* vertical stacking */
+    align-items: flex-start; /* align text to left */
+    gap: 10px;               /* spacing between elements */
+    width: 100%;             /* let container fill available space */
+    max-width: 600px;        /* optional: prevent too wide */
 }
 
 /* ---------- DROPDOWN ---------- */
@@ -99,7 +104,6 @@ p, h5, h4 {
     background-color: #555;
 }
 
-/* ---------- SECTIONS ---------- */
 /* ---------- SECTIONS ---------- */
 section {
 	display: flex;
