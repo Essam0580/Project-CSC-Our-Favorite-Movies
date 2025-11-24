@@ -85,7 +85,7 @@ section {
 
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s ease;
-    pointer-events: none; /* prevent scrolling on hidden sections */
+    pointer-events: none;
 }
 
 section.visible {
@@ -101,23 +101,38 @@ section.fade-out {
     z-index: 1;
 }
 
-/* ---------- UNIVERSAL IMAGE SIZING ---------- */
+/* ---------- UNIVERSAL IMAGE FIX ---------- */
 section img {
     width: 320px;
     height: auto;
     border-radius: 10px;
     flex-shrink: 0;
+    object-fit: cover;
 }
 
-/* ---------- FIXED TEXT BOX ---------- */
+/* ---------- UNIVERSAL TEXT CONTAINER ---------- */
 .Movie_info,
 .Movie_info1,
-.Movie_info2 {
+.Movie_info2,
+.Movie_info3,
+.Movie_info4,
+.Movie_info5,
+.Movie_info6,
+.Movie_info7,
+.Movie_info8,
+.Movie_info9,
+.Movie_info10,
+.Movie_info11,
+.Movie_info12,
+.Movie_info13,
+.Movie_info14,
+.Movie_info15 {
     max-width: 600px;
     min-width: 300px;
     flex: 1;
 }
 
+/* ---------- FORCE FIX FOR SECTION 2 ---------- */
 #section2 {
     display: flex !important;
     flex-direction: row !important;
@@ -130,44 +145,7 @@ section img {
 #section2 img {
     width: 320px !important;
     height: auto !important;
-    border-radius: 10px !important;
-    flex-shrink: 0 !important;
     margin: 0 !important;
-}
-
-#section2 .Movie_info,
-#section2 .Movie_info1,
-#section2 .Movie_info2 {
-    max-width: 600px !important;
-    min-width: 300px !important;
-    flex: 1 !important;
-}
-/* ---------- IMAGE + TEXT LAYOUT ---------- */
-section img {
-    max-width: 350px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.Movie_info, .Movie_info1, .Movie_info2, .Movie_info3,
-.Movie_info4, .Movie_info5, .Movie_info6, .Movie_info7,
-.Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11,
-.Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15 {
-    flex: 1;
-    min-width: 300px;
-}
-
-/* SECTION 1 IMAGE FIX */
-.title {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-}
-
-.title img {
-    margin-right: 30px;
 }
 
 /* ---------- TYPEWRITER ---------- */
@@ -226,10 +204,12 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    margin-top: auto !important;
-    padding-bottom: 40px !important;
-    align-self: left;
+    margin-top: auto;
+    padding-bottom: 80px; /* push LOWER */
+    width: 100%;
+    text-align: center;
 }
+
 .bottom-link a {
     display: inline-block;
     padding: 15px 30px;
