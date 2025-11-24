@@ -12,6 +12,13 @@ body {
     overflow-x: hidden;
 }
 
+/* ---------- MAIN TITLE ---------- */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
 /* ---------- DROPDOWN ---------- */
 .dropdown {
     width: 150px;
@@ -66,26 +73,40 @@ body {
 section {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 30px;
     margin: 100px 0;
-    opacity: 0;   /* start hidden for fade in */
-    transition: opacity 1s ease-in-out;
+    opacity: 0;               /* start hidden */
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section.fade-out {
+    opacity: 0;
+    transform: translateY(-50px);
 }
 
 /* Alternate text color */
-section:nth-child(odd) h1, section:nth-child(odd) h2, section:nth-child(odd) h3, section:nth-child(odd) h4, section:nth-child(odd) h5, section:nth-child(odd) p {
+section:nth-child(odd) h1, section:nth-child(odd) h2, section:nth-child(odd) h3,
+section:nth-child(odd) h4, section:nth-child(odd) h5, section:nth-child(odd) p {
     color: white;
 }
 
-section:nth-child(even) h1, section:nth-child(even) h2, section:nth-child(even) h3, section:nth-child(even) h4, section:nth-child(even) h5, section:nth-child(even) p {
+section:nth-child(even) h1, section:nth-child(even) h2, section:nth-child(even) h3,
+section:nth-child(even) h4, section:nth-child(even) h5, section:nth-child(even) p {
     color: #FFD700; /* yellow */
 }
 
-/* Images side by side */
+/* ---------- IMAGES ---------- */
 section img {
     max-width: 300px;
+    height: auto;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -96,6 +117,18 @@ section img {
 .Movie_info8, .Movie_info9, .Movie_info10, .Movie_info11,
 .Movie_info12, .Movie_info13, .Movie_info14, .Movie_info15 {
     max-width: 600px;
+    flex: 1;
+}
+
+/* ---------- SECTION 1 FIX ---------- */
+.title img, .title .Movie_info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.title {
+    flex-direction: row; /* image beside content */
+    text-align: center;
 }
 
 /* ---------- TYPEWRITER ---------- */
@@ -136,7 +169,7 @@ section img {
     display: flex;
     gap: 10px;
     overflow-y: auto;
-    max-height: 200px; /* vertical scroll */
+    max-height: 200px;
     padding: 10px;
 }
 
