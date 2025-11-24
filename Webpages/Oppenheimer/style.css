@@ -1,11 +1,10 @@
-/* 1. GLOBAL RESETS */
-* {
-    box-sizing: border-box; /* Crucial for layout math */
-}
-
 @font-face { 
     font-family: "FranklinGothicCondensed";
     src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
+}
+
+* {
+    box-sizing: border-box; /* Keeps padding from breaking layouts */
 }
 
 body {
@@ -14,11 +13,12 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    overflow-x: hidden; /* Prevents side-scroll */
-    overflow-y: auto;
+    overflow-x: hidden; /* Prevents horizontal scrollbar on the whole page */
 }
 
-/* 2. HEADINGS & TEXT */
+/* =========================================
+   2. TYPOGRAPHY & TEXT WRAPPING
+   ========================================= */
 h1 {
     text-align: center;
     font-size: 48px;
@@ -29,124 +29,166 @@ h1 {
 h2, h3, h4, h5, h6 {
     margin: 10px 0;
     line-height: 1.4;
+    width: 100%;
 }
 
-/* FIXED: This ensures text wraps and doesn't run off screen */
+/* FORCE FIX: This stops text from staying in one line */
 p {
     display: block;
     width: 100%;
     max-width: 600px;
-    white-space: normal; /* Forces text to wrap to next line */
+    white-space: normal !important; /* CRITICAL FIX */
+    word-wrap: break-word;
     line-height: 1.6;
     margin: 10px 0;
     font-size: 18px;
 }
 
-/* 3. SECTION LAYOUT (Desktop Default) */
+/* =========================================
+   3. MAIN SECTION LAYOUT (Desktop)
+   ========================================= */
 section {
     display: flex;
-    flex-direction: row; /* Side by side */
+    flex-direction: row; /* Side-by-Side Images and Text */
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Vertically center */
     gap: 50px;
     width: 100%;
-    min-height: 100vh; /* Takes full screen height */
+    min-height: 90vh; /* Takes up most of the screen height */
     padding: 40px;
-    border-bottom: 1px solid #222; /* Optional: visual separator */
+    position: relative;
 }
 
-/* 4. IMAGES */
+/* Standard Images (Posters/Characters) */
 section img {
-    width: 300px; /* Desktop image size */
+    width: 300px; 
     height: auto;
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; /* Prevents image from getting squished */
 }
 
-/* 5. MOVIE INFO CONTAINERS (The Magic Selector) */
-/* This targets ANY class that contains the word "Movie_info" */
+/* Video Containers */
+.Plot-video iframe {
+    width: 560px; 
+    height: 315px;
+    max-width: 100%;
+}
+
+/* =========================================
+   4. MOVIE INFO CONTAINERS
+   ========================================= */
+/* Targets Movie_info1, Movie_info2, etc automatically */
 div[class*="Movie_info"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; /* Aligns text to the left */
     max-width: 600px;
+    width: 100%;
 }
 
-/* 6. MOBILE / TABLET FIXES (Stacking) */
-/* Applied when screen is smaller than 900px */
+/* =========================================
+   5. RESPONSIVE / STACKING (Mobile)
+   ========================================= */
+/* This runs on Phones and Tablets */
 @media screen and (max-width: 900px) {
-    
     section {
-        flex-direction: column; /* STACK on top of each other */
-        height: auto;           /* Remove 100vh limit so content fits */
+        flex-direction: column; /* STACKS items vertically */
+        height: auto;           /* Removes fixed height */
         min-height: auto;
         padding: 60px 20px;
-        text-align: center;     /* Center text for mobile */
+        text-align: center;     /* Centers text */
     }
 
-    /* Make images responsive */
+    div[class*="Movie_info"] {
+        align-items: center;    /* Centers text inside the box */
+    }
+
     section img {
         width: 100%;
-        max-width: 350px;
+        max-width: 400px;       /* Limits image size on phone */
         margin-bottom: 20px;
     }
 
-    /* Center the text containers */
-    div[class*="Movie_info"] {
-        align-items: center;
-        width: 100%;
-    }
-    
-    h1 { font-size: 36px; }
+    h1 { font-size: 32px; }
 }
 
-/* 7. VIDEO EMBED FIX */
-.Plot-video iframe {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-}
-@media (max-width: 600px) {
-    .Plot-video iframe { height: 250px; }
+/* =========================================
+   6. SECTION 16: GALLERY FIX
+   ========================================= */
+/* Specific fix for the gallery section container */
+#Page16 {
+    flex-direction: column; /* Gallery title on top, images below */
+    height: auto;
+    min-height: auto;
+    padding-bottom: 0;
 }
 
-/* 8. BOTTOM LINK FIX */
-.bottom-link {
+.image-gallery {
     display: flex;
+    flex-wrap: wrap;       /* Allows images to wrap to next line */
     justify-content: center;
-    align-items: center;
+    gap: 15px;
     width: 100%;
-    padding: 60px 0 100px 0; /* Extra padding at bottom */
-    background-color: #000;
+    padding: 20px 0;
+}
+
+/* Override general section img rules for the gallery */
+.image-gallery img {
+    width: 150px !important;  /* Force fixed width */
+    height: 225px !important; /* Force fixed height */
+    object-fit: cover;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* =========================================
+   7. BOTTOM LINK FIX
+   ========================================= */
+.bottom-link {
+    display: block; /* Ensures it takes up its own line */
+    width: 100%;
+    text-align: center;
+    padding: 80px 0 100px 0; /* Huge padding to force it down */
+    margin-top: 20px;
+    clear: both;
+    background-color: #000; /* Matches background */
 }
 
 .bottom-link a {
+    display: inline-block;
     padding: 15px 40px;
     background-color: #bd9722;
     color: white;
     text-decoration: none;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: background 0.3s;
 }
 
 .bottom-link a:hover {
-    background-color: #d4aa2b;
-    transform: scale(1.05);
+    background-color: #fff;
+    color: #000;
 }
 
-/* 9. DROPDOWN MENU */
+/* =========================================
+   8. DROPDOWN (Extras)
+   ========================================= */
 .dropdown {
     width: 150px;
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 9999; /* Ensure it's on top of everything */
+    z-index: 9999;
 }
-
 .dropdown-header {
     background-color: #bd9722; 
     color: white;
@@ -156,41 +198,20 @@ div[class*="Movie_info"] {
     border-radius: 8px 8px 0 0;
     text-align: center;
 }
-
-.small-bar { height: 3px; background-color: #cccccc; }
-
+.small-bar { width: 100%; height: 3px; background-color: #cccccc; margin: 0; }
 .dropdown-content {
     display: none;
     background-color: #1a1a1a;
     padding: 5px 0;
     border-radius: 0 0 8px 8px;
 }
-
 .dropdown-content a {
     display: block;
-    padding: 10px;
+    width: 100%;
+    padding: 10px 0;
     color: white;
     text-decoration: none;
     text-align: center;
 }
 .dropdown-content a:hover { background-color: #333; }
-
-/* 10. GALLERY SCROLL */
-.image-gallery {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping */
-    justify-content: center;
-    gap: 15px;
-}
-
-.image-gallery img {
-    width: 120px;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.2s;
-}
-
-.image-gallery img:hover {
-    transform: scale(1.1);
-    z-index: 10;
-}
+.star-rating { color: gold; font-size: 24px; }
