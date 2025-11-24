@@ -3,180 +3,65 @@
     src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
 }
 
-body {
+    {
     font-family: "FranklinGothicCondensed", sans-serif;
-    background-color: #000;
+    }
+/* Body background */
+body {
+    background-color: #FFFFFF;
     margin: 0;
-    padding: 0;
-    overflow: hidden; /* stop natural scroll */
-    color: white;
+    padding: 20px;
 }
 
-/* DROPDOWN */
+/* Dropdown container */
 .dropdown {
-    width: 140px;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 2000;
+    width: 120px;         /* keeps everything at this width */
+    position: relative;
+    margin-left: 20px;     /* keep it on the left */
 }
 
+/* Clickable header */
 .dropdown-header {
-    background-color: #bd9722;
+    background-color: #bd9722; 
     color: white;
     padding: 10px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 8px 8px 0 0;
-    text-align: center;
-    font-size: 18px;
+    text-align: center;        /*  Fix text centering */
 }
 
+/* Small horizontal line UNDER header */
+.small-bar {
+    width: 100%;               /* same width as dropdown  */
+    height: 3px;               /* Made correctly thin */
+    background-color: #cccccc;
+    display: block;
+    margin: 0;                 /* no space above/below */
+}
+
+/* Dropdown content */
 .dropdown-content {
     display: none;
     background-color: #1a1a1a;
-    border-radius: 0 0 8px 8px;
     padding: 5px 0;
-    box-shadow: 0 0 10px black;
-    position: absolute;
-    width: 100%;
+    border-radius: 0 0 8px 8px;
+    width: 100%;               /* matches dropdown width */
 }
 
+/* Vertical links */
 .dropdown-content a {
     display: block;
-    padding: 8px 0;
-    margin: 4px auto;
-    width: 90%;
+    width: calc(100% - 10px);  /* perfectly centered inside the dropdown */
+    margin: 5px auto;          /*  auto = centers the links */
+    padding: 6px 0;
     color: white;
-    background: #333;
-    text-align: center;
-    border-radius: 5px;
+    background-color: #333;
     text-decoration: none;
+    text-align: center;        /* centers text */
+    border-radius: 4px;
 }
 
 .dropdown-content a:hover {
     background-color: #555;
-}
-
-/* SECTIONS (FADE + CENTER FIXED) */
-section {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    max-width: 1100px;
-
-    transform: translate(-50%, -50%);
-    min-height: 70vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-
-    opacity: 0;
-    transition: opacity 1s ease;
-
-    padding: 40px;
-    box-sizing: border-box;
-}
-
-/* ACTIVE SECTION */
-section.visible {
-    opacity: 1;
-    z-index: 10;
-}
-
-section img {
-    width: 40%;
-    max-width: 380px;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-/* TEXT BOXES (FIX FOR LONG PARAGRAPHS) */
-.Movie_info,
-.Movie_info1, .Movie_info2, .Movie_info3, .Movie_info4,
-.Movie_info5, .Movie_info6, .Movie_info7, .Movie_info8,
-.Movie_info9, .Movie_info10, .Movie_info11, .Movie_info12,
-.Movie_info13, .Movie_info14, .Movie_info15 {
-
-    flex: 1;
-    max-height: 65vh;
-    overflow-y: auto;
-    padding-right: 10px;
-}
-
-/* FIX TITLE CENTERING */
-.Movie_info h3, 
-.Movie_info1 h3,
-.Movie_info2 h3,
-.Movie_info3 h3 {
-    text-align: center;
-}
-
-/* TYPEWRITER EFFECT */
-.typewriter p, .typewriter h5, .typewriter h3, .typewriter h4 {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid #ffc933;
-    animation: typing 4s steps(50, end), blink 0.7s infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-
-/* STAR ANIMATION */
-.star-rating {
-    color: gold;
-    font-size: 24px;
-    animation: glow 1s infinite alternate;
-}
-@keyframes glow {
-    0% { text-shadow: 0 0 4px gold; }
-    100% { text-shadow: 0 0 18px gold; }
-}
-
-/* SECTION 16 GALLERY */
-.image-gallery {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    max-width: 100%;
-}
-
-.image-gallery a img {
-    width: 160px;
-    height: 230px;
-    border-radius: 8px;
-    object-fit: cover;
-    transition: 0.3s;
-}
-
-.image-gallery a img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 15px gold;
-}
-
-
-/* BOTTOM LINK BOX */
-.bottom-link {
-    background: #222;
-    padding: 12px;
-    margin-top: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.bottom-link a {
-    color: gold;
-    font-weight: bold;
-    text-decoration: none;
 }
