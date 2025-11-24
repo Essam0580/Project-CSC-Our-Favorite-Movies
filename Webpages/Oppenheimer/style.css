@@ -1,3 +1,8 @@
+/* 1. GLOBAL RESETS */
+* {
+    box-sizing: border-box; /* Crucial for layout math */
+}
+
 @font-face { 
     font-family: "FranklinGothicCondensed";
     src: url("Fonts/Franklin Gothic Condensed.otf") format("opentype");
@@ -7,151 +12,141 @@ body {
     font-family: "FranklinGothicCondensed", sans-serif;
     background-color: #000;
     margin: 0;
-    padding: 20px; /* Be careful here: padding on body can sometimes cause scroll issues */
+    padding: 0;
     color: white;
-    overflow-x: hidden;
-    overflow-y: auto; 
-    padding-bottom: 100px; /* FIXED: Adds space at the bottom so the link doesn't hit the edge */
+    overflow-x: hidden; /* Prevents side-scroll */
+    overflow-y: auto;
 }
 
-/* ---------- MAIN TITLE ---------- */
+/* 2. HEADINGS & TEXT */
 h1 {
     text-align: center;
     font-size: 48px;
-    margin: 50px 0;
+    margin: 50px 20px;
+    line-height: 1.2;
 }
 
-/* Make all text wrap properly */
-p, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+/* FIXED: This ensures text wraps and doesn't run off screen */
+p {
     display: block;
-    max-width: 600px;
-    min-width: 0;
     width: 100%;
-    word-break: break-word;
-    white-space: normal; /* FIXED: This ensures text wraps to the next line */
+    max-width: 600px;
+    white-space: normal; /* Forces text to wrap to next line */
     line-height: 1.6;
-    margin: 5px 0;
+    margin: 10px 0;
+    font-size: 18px;
 }
 
-/* ---------- SECTIONS (Layout) ---------- */
+/* 3. SECTION LAYOUT (Desktop Default) */
 section {
-	display: flex;
-	flex-direction: row; /* Default: Side by Side */
-	justify-content: center;
-	align-items: center;
-	gap: 40px;
-	width: 100%;
-	min-height: 100vh; /* Each section takes full screen height */
-    padding: 50px 0;   /* FIXED: Added padding so content doesn't touch edges */
-    box-sizing: border-box; /* FIXED: Prevents padding from breaking width */
-    
-    /* Animation stuff */
-	opacity: 0;
-	transform: translateY(50px);
-	transition: opacity 0.8s ease, transform 0.8s ease;
-	pointer-events: auto;
-	position: relative;
+    display: flex;
+    flex-direction: row; /* Side by side */
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    min-height: 100vh; /* Takes full screen height */
+    padding: 40px;
+    border-bottom: 1px solid #222; /* Optional: visual separator */
 }
 
-section.visible {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-/* ---------- RESPONSIVE FIX (Makes things stack) ---------- */
-/* FIXED: This block runs on screens smaller than 900px (Tablets/Phones) */
-@media (max-width: 900px) {
-    section {
-        flex-direction: column; /* Stacks Image on top of Text */
-        height: auto;           /* Allows section to grow based on text size */
-        min-height: auto;       /* Removes the forced full-screen height on mobile */
-        padding: 50px 20px;
-        text-align: center;     /* Centers text on mobile */
-    }
-
-    /* Center the text containers on mobile */
-    .Movie_info, [class^="Movie_info"] {
-        align-items: center !important; 
-    }
-}
-
-/* ---------- IMAGES ---------- */
+/* 4. IMAGES */
 section img {
-    width: 320px;
+    width: 300px; /* Desktop image size */
     height: auto;
     border-radius: 10px;
-    flex-shrink: 0;
     object-fit: cover;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
-/* ---------- TEXT CONTAINERS ---------- */
-/* Simplified selector for all Movie_info classes */
-[class^="Movie_info"] {
+/* 5. MOVIE INFO CONTAINERS (The Magic Selector) */
+/* This targets ANY class that contains the word "Movie_info" */
+div[class*="Movie_info"] {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
-    gap: 10px;
-    flex: 1;
     max-width: 600px;
-    min-width: 300px;
 }
 
-/* ---------- TYPEWRITER (The culprit for one-line text) ---------- */
-.typewriter p {
-    overflow: hidden;
-    border-right: .15em solid orange;
+/* 6. MOBILE / TABLET FIXES (Stacking) */
+/* Applied when screen is smaller than 900px */
+@media screen and (max-width: 900px) {
     
-    /* FIXED: Changed from 'nowrap' to 'normal' so long text doesn't break layout. 
-       Note: The typing animation looks weird on multi-line text, 
-       so usually typewriter is only used for short headers. */
-    white-space: normal; 
+    section {
+        flex-direction: column; /* STACK on top of each other */
+        height: auto;           /* Remove 100vh limit so content fits */
+        min-height: auto;
+        padding: 60px 20px;
+        text-align: center;     /* Center text for mobile */
+    }
+
+    /* Make images responsive */
+    section img {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    /* Center the text containers */
+    div[class*="Movie_info"] {
+        align-items: center;
+        width: 100%;
+    }
     
-    letter-spacing: 0.05em;
-    /* Removed fixed typing animation because it conflicts with wrapping text */
-    animation: blink-caret .75s step-end infinite;
+    h1 { font-size: 36px; }
 }
 
-@keyframes blink-caret {
-    0%,100% { border-color: transparent; }
-    50% { border-color: orange; }
-}
-
-/* ---------- BOTTOM LINK ---------- */
-/* FIXED: Created a specific container to force it to the bottom */
-.bottom-link-container {
+/* 7. VIDEO EMBED FIX */
+.Plot-video iframe {
     width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+@media (max-width: 600px) {
+    .Plot-video iframe { height: 250px; }
+}
+
+/* 8. BOTTOM LINK FIX */
+.bottom-link {
     display: flex;
-    justify-content: center; /* Centers the button */
+    justify-content: center;
     align-items: center;
-    padding: 50px 0;
-    margin-top: 50px;
-    clear: both; /* Ensures it sits below floated elements */
+    width: 100%;
+    padding: 60px 0 100px 0; /* Extra padding at bottom */
+    background-color: #000;
 }
 
 .bottom-link a {
-    display: inline-block;
-    padding: 15px 30px;
+    padding: 15px 40px;
     background-color: #bd9722;
     color: white;
     text-decoration: none;
     border-radius: 8px;
+    font-size: 18px;
     font-weight: bold;
-    transition: background 0.3s;
-    cursor: pointer;
+    transition: 0.3s;
 }
 
 .bottom-link a:hover {
-    background-color: #a67c1a;
+    background-color: #d4aa2b;
+    transform: scale(1.05);
 }
 
-/* ---------- DROPDOWN & EXTRAS ---------- */
+/* 9. DROPDOWN MENU */
 .dropdown {
     width: 150px;
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1000;
+    z-index: 9999; /* Ensure it's on top of everything */
 }
+
 .dropdown-header {
     background-color: #bd9722; 
     color: white;
@@ -161,51 +156,41 @@ section img {
     border-radius: 8px 8px 0 0;
     text-align: center;
 }
-.small-bar { width: 100%; height: 3px; background-color: #cccccc; margin: 0; }
+
+.small-bar { height: 3px; background-color: #cccccc; }
+
 .dropdown-content {
     display: none;
     background-color: #1a1a1a;
     padding: 5px 0;
     border-radius: 0 0 8px 8px;
-    width: 100%;
 }
+
 .dropdown-content a {
     display: block;
-    width: calc(100% - 10px);
-    margin: 5px auto;
-    padding: 6px 0;
+    padding: 10px;
     color: white;
-    background-color: #333;
     text-decoration: none;
     text-align: center;
-    border-radius: 4px;
 }
-.dropdown-content a:hover { background-color: #555; }
-.star-rating {
-    font-size: 24px;
-    color: gold;
-    animation: stars 1.5s ease-in-out infinite alternate;
-}
-@keyframes stars {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
+.dropdown-content a:hover { background-color: #333; }
+
+/* 10. GALLERY SCROLL */
 .image-gallery {
     display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 10px;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center;
+    gap: 15px;
 }
+
 .image-gallery img {
-    width: 150px;
-    height: 200px;
+    width: 120px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.2s;
 }
+
 .image-gallery img:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px gold;
+    z-index: 10;
 }
