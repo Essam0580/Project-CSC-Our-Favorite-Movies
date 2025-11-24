@@ -14,18 +14,46 @@ typewriterSections.forEach(section => {
 	if (text) section.classList.add("typewriter");
 });
 
-// ---------- SCROLL FADE-IN ----------
-const sections = document.querySelectorAll("section");
+// ---------- SCROLL-TRIGGERED SINGLE SECTION ----------
+document.addEventListener('DOMContentLoaded', () => {
+	const sections = document.querySelectorAll('section');
+	let currentIndex = 0;
 
-function handleScroll() {
-	sections.forEach(section => {
-		const rect = section.getBoundingClientRect();
-		if(rect.top < window.innerHeight * 0.85) {
-			section.classList.add("visible");
+	function showSection(index) {
+		sections.forEach((sec, i) => {
+			if (i === index) {
+				sec.classList.add('visible');
+				sec.style.position = 'fixed';
+				sec.style.top = '0';
+				sec.style.left = '0';
+				sec.style.width = '100%';
+				sec.style.zIndex = '5';
+			} else {
+				sec.classList.remove('visible');
+				sec.style.position = (i === sections.length - 1) ? 'relative' : 'fixed';
+				sec.style.top = '0';
+				sec.style.left = '0';
+				sec.style.width = '100%';
+				sec.style.zIndex = '1';
+			}
+		});
+	}
+
+	// Show first section initially
+	showSection(0);
+
+	// Handle scroll
+	window.addEventListener('scroll', () => {
+		const scrollPos = window.scrollY;
+		const step = window.innerHeight * 0.8; // amount to scroll per section
+		const newIndex = Math.min(Math.floor(scrollPos / step), sections.length - 1);
+
+		if (newIndex !== currentIndex) {
+			currentIndex = newIndex;
+			showSection(currentIndex);
 		}
 	});
-}
 
-// Trigger on scroll and page load
-window.addEventListener("scroll", handleScroll);
-window.addEventListener("load", handleScroll);
+	// Make body tall enough to allow scrolling
+	document.body.style.height = `${sections.length * window.innerHeight}px`;
+});
