@@ -77,15 +77,13 @@ section {
     align-items: center;
     gap: 40px;
 
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative; /* changed from absolute */
     width: 100%;
     min-height: 100vh;
 
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s ease;
-    pointer-events: none;
+    pointer-events: none; /* prevents interaction when hidden */
 }
 
 section.visible {
@@ -133,7 +131,6 @@ section img {
 }
 
 /* ---------- FORCE FIX FOR SECTION 2 ---------- */
-/* Page 2 container layout */
 #Page2 {
     display: flex !important;
     flex-direction: row !important;
@@ -144,23 +141,23 @@ section img {
 
 /* Left side image container */
 #Page2 .Movie_info1 {
-    max-width: 250px;  /* limit image container */
     flex: 1;
+    max-width: 200px;  /* smaller container */
 }
 
 /* Right side text container */
 #Page2 .Movie_info2 {
-    max-width: 250px;
     flex: 1;
+    max-width: 250px;
 }
 
 /* Image inside container */
 #Page2 .Movie_info1 img {
-    width: 100%;   /* fills its container */
+    width: auto;       /* scale proportionally */
+    max-width: 200px;  /* smaller than before */
     height: auto;
     border-radius: 5px;
 }
-
 
 /* ---------- TYPEWRITER ---------- */
 .typewriter p {
@@ -218,11 +215,10 @@ section img {
 
 /* ---------- BOTTOM LINK ---------- */
 .bottom-link {
-    position: relative;   /* normal flow */
+    position: relative;   /* stays in normal flow */
     text-align: left;     /* align left */
-    margin: 20px 0 50px 20px; /* add some space below sections */
+    margin: 20px 0 50px 20px; /* space below sections */
 }
-
 
 .bottom-link a {
     display: inline-block;
